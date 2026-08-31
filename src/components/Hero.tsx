@@ -44,7 +44,7 @@ export const Hero: React.FC = () => {
         
         {/* Brand Header */}
         <div className="mb-4 sm:mb-6">
-          <BrandLogo size="md" />
+          {/* Logo removida conforme solicitado */}
         </div>
 
         {/* Main Headline with playful pedagogical identity highlight for 'confiança' */}
