@@ -135,7 +135,7 @@ export const Hero: React.FC = () => {
               className="w-full h-auto object-contain rounded-2xl sm:rounded-3xl filter drop-shadow-[0_20px_35px_var(--color-shadow-neutral)]"
               referrerPolicy="no-referrer"
               loading="eager"
-              decoding="async"
+              decoding="sync"
               fetchPriority="high"
             />
           </div>

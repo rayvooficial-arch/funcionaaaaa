@@ -14,7 +14,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
 }) => {
   const sizeClasses = {
     sm: "max-w-[110px]",
-    md: "max-w-[150px]",
+    md: "max-w-[144px]",
     lg: "max-w-[210px]",
     xl: "max-w-[280px]",
   };

@@ -155,21 +155,6 @@ export const PainPoints: React.FC = () => {
           ))}
         </div>
 
-        {/* Dot Pagination Indicators */}
-        <div className="flex items-center justify-center gap-2">
-          {PAIN_POINTS.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => scrollToIndex(idx)}
-              aria-label={`Ir para card ${idx + 1}`}
-              className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                activeIndex === idx
-                  ? "w-7 bg-[var(--color-primary)]"
-                  : "w-2.5 bg-[var(--color-border)] hover:bg-[var(--color-text-muted)]"
-              }`}
-            />
-          ))}
-        </div>
       </div>
     </section>
   );
