@@ -172,7 +172,7 @@ export const OfferSection: React.FC = () => {
             {/* Features Checklist */}
             <div className="w-full space-y-2.5 mb-6 text-left max-w-sm mx-auto">
               {[
-                { text: "Tudo do Kit Completo", isMain: true },
+                { text: "Livro de Grafismo Fonético", isMain: true },
                 { text: "🎁 Bônus 1 — 30 Atividades Extras de Fixação" },
                 { text: "🎁 Bônus 2 — Atividades para Colorir" },
                 { text: "🎁 Bônus 3 — Certificados de Conquista" },

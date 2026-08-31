@@ -18,6 +18,8 @@ export const Hero: React.FC = () => {
       id="hero"
       className="relative pt-6 pb-14 sm:pt-10 sm:pb-24 overflow-hidden bg-gradient-to-b from-[var(--color-bg-alt)] via-[var(--color-bg-page)] to-[var(--color-bg-page)]"
     >
+      <Hero3DBackground />
+
       {/* Dynamic Background Halos */}
       <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[760px] h-[380px] bg-gradient-to-b from-[var(--color-primary)]/12 via-[var(--color-primary-light)]/10 to-transparent rounded-full blur-3xl pointer-events-none animate-glow-pulse" />
       <div className="absolute top-1/3 -left-20 w-80 h-80 bg-[var(--color-yellow)]/10 rounded-full blur-3xl pointer-events-none" />
