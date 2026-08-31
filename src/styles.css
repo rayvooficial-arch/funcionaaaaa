@@ -1,0 +1,419 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@theme {
+  --font-display: "Fredoka", "Baloo 2", cursive, sans-serif;
+  --font-brand: "Baloo 2", "Fredoka", cursive, sans-serif;
+  --font-sans: "Nunito", sans-serif;
+}
+
+:root {
+  /* ==========================================================================
+     1. BRAND / IDENTIDADE PRIMÁRIA
+     ========================================================================== */
+  --color-brand: #4F46E5;
+  --color-brand-strong: #4338CA;
+  --color-brand-light: #818CF8;
+  --color-brand-bg: #EEF2FF;
+  --color-brand-border: rgba(79, 70, 229, 0.28);
+
+  /* Legacy Brand Aliases */
+  --color-primary: var(--color-brand);
+  --color-primary-dark: var(--color-brand-strong);
+  --color-primary-light: var(--color-brand-light);
+  --color-primary-bg: var(--color-brand-bg);
+  --color-primary-border: var(--color-brand-border);
+
+  /* ==========================================================================
+     2. ACTION / CONVERSÃO & CTA
+     ========================================================================== */
+  --color-action: #E11D48;
+  --color-action-strong: #BE123C;
+  --color-action-light: #FB7185;
+  --color-action-bg: #FFF1F2;
+  --color-action-shadow: rgba(225, 29, 72, 0.48);
+  --color-action-shadow-hover: rgba(225, 29, 72, 0.65);
+
+  /* Legacy Action Aliases */
+  --color-cta: var(--color-action);
+  --color-cta-dark: var(--color-action-strong);
+  --color-cta-light: var(--color-action-light);
+  --color-cta-bg: var(--color-action-bg);
+
+  /* ==========================================================================
+     3. FEEDBACK / CONFIANÇA & SUCESSO
+     ========================================================================== */
+  --color-success: #059669;
+  --color-success-strong: #047857;
+  --color-success-light: #6EE7B7;
+  --color-success-bg: #ECFDF5;
+  --color-success-border: rgba(5, 150, 105, 0.3);
+  --color-success-shadow: rgba(5, 150, 105, 0.3);
+
+  /* Legacy Success Dark Alias */
+  --color-success-dark: var(--color-success-strong);
+
+  /* ==========================================================================
+     4. HIGHLIGHTS & ACCENTS (DESTAQUES & APOIO)
+     ========================================================================== */
+  /* Solar / Golden Highlight */
+  --color-highlight: #FBBF24;
+  --color-highlight-strong: #D97706;
+  --color-highlight-light: #FFFBEB;
+  --color-highlight-badge: #FEF3C7;
+
+  /* Legacy Yellow Aliases */
+  --color-yellow: var(--color-highlight);
+  --color-yellow-dark: var(--color-highlight-strong);
+  --color-yellow-light: var(--color-highlight-light);
+  --color-yellow-badge: var(--color-highlight-badge);
+
+  /* Magenta / Pink Accent */
+  --color-accent: #EC4899;
+  --color-accent-strong: #DB2777;
+  --color-accent-light: #FDF2F8;
+  --color-accent-badge: #FCE7F3;
+
+  /* Legacy Pink Aliases */
+  --color-pink: var(--color-accent);
+  --color-pink-dark: var(--color-accent-strong);
+  --color-pink-light: var(--color-accent-light);
+  --color-pink-badge: var(--color-accent-badge);
+
+  /* Purple / Violet Complementary */
+  --color-accent-purple: #7C3AED;
+  --color-accent-purple-strong: #6D28D9;
+  --color-accent-purple-light: #F5F3FF;
+
+  /* ==========================================================================
+     5. SURFACES & BACKGROUNDS
+     ========================================================================== */
+  --color-surface: #F5F3FF;
+  --color-surface-alt: #EEF2FF;
+  --color-surface-warm: #FFFBEB;
+  --color-surface-card: #FFFFFF;
+  --color-card: var(--color-surface-card);
+  --color-surface-dark: #1E1B4B;
+  --color-surface-footer: #0F0C29;
+
+  /* Legacy BG Aliases */
+  --color-bg-page: var(--color-surface);
+  --color-bg-alt: var(--color-surface-alt);
+  --color-bg-warm: var(--color-surface-warm);
+  --color-bg-card: var(--color-surface-card);
+  --color-bg-dark: var(--color-surface-dark);
+  --color-bg-footer: var(--color-surface-footer);
+
+  /* ==========================================================================
+     6. TYPOGRAPHY & TEXT
+     ========================================================================== */
+  --color-text-title: #000000;
+  --color-text-body: #111827;
+  --color-text-secondary: #374151;
+  --color-text-muted: #6B7280;
+  --color-text-white: #FFFFFF;
+  --color-text-footer: #CBD5E1;
+  --color-text-footer-muted: #94A3B8;
+
+  /* Contrast Text on Surfaces */
+  --color-on-brand: #FFFFFF;
+  --color-on-action: #FFFFFF;
+  --color-on-dark: #FFFFFF;
+  --color-on-dark-muted: rgba(255, 255, 255, 0.85);
+  --color-on-dark-subtle: rgba(255, 255, 255, 0.65);
+  --color-on-light: #000000;
+
+  /* ==========================================================================
+     7. BORDERS & OVERLAYS
+     ========================================================================== */
+  --color-border: #C7D2FE;
+  --color-border-brand: rgba(79, 70, 229, 0.3);
+  --color-border-soft: rgba(30, 27, 75, 0.12);
+  --color-border-footer: rgba(255, 255, 255, 0.12);
+
+  /* Semantic Overlays & Alpha Layers */
+  --color-overlay-dark: rgba(15, 23, 42, 0.7);
+  --color-overlay-dark-heavy: rgba(15, 23, 42, 0.9);
+  --color-overlay-dark-subtle: rgba(15, 23, 42, 0.15);
+  --color-overlay-light: rgba(255, 255, 255, 0.15);
+  --color-overlay-light-strong: rgba(255, 255, 255, 0.95);
+  --color-overlay-light-subtle: rgba(255, 255, 255, 0.05);
+  --color-overlay-border: rgba(255, 255, 255, 0.2);
+  --color-overlay-border-subtle: rgba(255, 255, 255, 0.1);
+
+  /* Legacy Border Aliases */
+  --color-border-primary: var(--color-border-brand);
+
+  /* ==========================================================================
+     8. ILLUSTRATION & CHARACTER TOKENS (VECTORS / SVGS)
+     ========================================================================== */
+  --color-illustration-primary: var(--color-brand);
+  --color-illustration-primary-strong: var(--color-brand-strong);
+  --color-illustration-primary-light: var(--color-brand-light);
+  --color-illustration-secondary: var(--color-accent);
+  --color-illustration-highlight: var(--color-highlight);
+  --color-illustration-highlight-dark: var(--color-highlight-strong);
+  --color-illustration-accent: var(--color-action);
+  --color-illustration-accent-light: var(--color-action-light);
+  --color-illustration-success: var(--color-success);
+  
+  /* Character Skin Tones (Pedagogically Diverse & Balanced) */
+  --color-illustration-skin-fair: #F8C29D;
+  --color-illustration-skin-warm: #FAD4B2;
+  --color-illustration-skin-rich: #8D5524;
+  --color-illustration-hair-dark: #26170E;
+  --color-illustration-hair-brown: #4B2C20;
+  --color-illustration-hair-copper: #BA4A1B;
+  --color-illustration-outline: #1E293B;
+  --color-illustration-mouth: #E11D48;
+
+  /* ==========================================================================
+     9. SHADOWS & ELEVATIONS
+     ========================================================================== */
+  --color-shadow-neutral: rgba(15, 23, 42, 0.08);
+  --color-shadow-brand: rgba(79, 70, 229, 0.2);
+  --color-shadow-action: rgba(225, 29, 72, 0.35);
+  --color-shadow-highlight: rgba(245, 158, 11, 0.3);
+  --color-shadow-success: rgba(5, 150, 105, 0.25);
+  --color-shadow-accent: rgba(236, 72, 153, 0.25);
+
+  --shadow-card: 0 10px 28px -4px rgba(79, 70, 229, 0.14);
+  --shadow-card-hover: 0 18px 36px -6px rgba(79, 70, 229, 0.22);
+  --shadow-action: 0 12px 28px -4px var(--color-action-shadow);
+  --shadow-action-hover: 0 16px 34px -4px var(--color-action-shadow-hover);
+  --shadow-cta: var(--shadow-action);
+  --shadow-cta-hover: var(--shadow-action-hover);
+  --shadow-success: 0 10px 25px -4px var(--color-success-shadow);
+
+  /* ==========================================================================
+     10. GRADIENTS
+     ========================================================================== */
+  --gradient-brand: linear-gradient(to right, var(--color-brand), var(--color-brand-strong), var(--color-brand-light));
+  --gradient-hero: linear-gradient(to bottom, var(--color-surface-alt), var(--color-surface), var(--color-surface));
+  --gradient-hero-title: linear-gradient(to right, var(--color-brand), var(--color-brand-strong), var(--color-success));
+  --gradient-hero-pillow: linear-gradient(to right, var(--color-brand-bg), var(--color-surface-warm), var(--color-action-bg));
+  --gradient-action: linear-gradient(135deg, var(--color-action) 0%, var(--color-action-strong) 60%, #9F1239 100%);
+  --gradient-cta: var(--gradient-action);
+  --gradient-cta-card: linear-gradient(to right, var(--color-action), var(--color-action-strong));
+  --gradient-success: linear-gradient(to right, var(--color-success), var(--color-success-strong));
+  --gradient-warm: linear-gradient(to bottom, var(--color-surface), var(--color-surface-warm), var(--color-surface));
+  --gradient-pain: linear-gradient(to bottom, var(--color-surface), var(--color-action-bg), var(--color-surface-warm));
+  --gradient-section-blue: linear-gradient(to bottom, var(--color-surface), var(--color-surface-alt), var(--color-surface));
+  --gradient-final: linear-gradient(to right, var(--color-brand), var(--color-accent), var(--color-highlight));
+}
+
+/* Smooth Transition for Dynamic Theme Switch */
+html {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.4);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-surface);
+  color: var(--color-text-title);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
+
+.font-brand {
+  font-family: var(--font-brand);
+}
+
+/* Primary High-Conversion CTA Button */
+.btn-brand-cta {
+  background: var(--gradient-action);
+  box-shadow: var(--shadow-action);
+  color: var(--color-text-white);
+  border-radius: 9999px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-brand-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-action-hover);
+  filter: brightness(1.05);
+}
+
+.btn-brand-cta:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+/* Secondary Action Button */
+.btn-brand-secondary {
+  background: var(--color-surface-card);
+  color: var(--color-brand);
+  border: 2px solid var(--color-brand);
+  border-radius: 9999px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.btn-brand-secondary:hover {
+  background: var(--color-brand-bg);
+  transform: translateY(-2px);
+}
+
+/* Card Styles */
+.card-brand {
+  background: var(--color-surface-card);
+  border-radius: 24px;
+  border: 1.5px solid var(--color-border-brand);
+  box-shadow: var(--shadow-card);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-brand:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-brand);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Badge Pills */
+.badge-pill {
+  border-radius: 9999px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Animations */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 55s linear infinite;
+}
+
+.animate-marquee:hover,
+.animate-marquee:active {
+  animation-play-state: paused;
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(1deg); }
+}
+
+@keyframes floatOpposite {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(6px) rotate(-1deg); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.45; transform: scale(1); }
+  50% { opacity: 0.75; transform: scale(1.03); }
+}
+
+@keyframes ctaPulse {
+  0%, 100% { transform: scale(1); box-shadow: var(--shadow-action); }
+  50% { transform: scale(1.018); box-shadow: var(--shadow-action-hover); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-150%); }
+  100% { transform: translateX(200%); }
+}
+
+@keyframes textGradientGlow {
+  0%, 100% { filter: drop-shadow(0 2px 8px var(--color-brand-border)); }
+  50% { filter: drop-shadow(0 4px 16px var(--color-brand-light)); }
+}
+
+.animate-float-slow {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatOpposite 5s ease-in-out infinite;
+}
+
+.animate-wiggle {
+  animation: wiggle 2s ease-in-out infinite;
+}
+
+.animate-hero-float {
+  animation: heroFloat 5s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+.animate-cta-pulse {
+  animation: ctaPulse 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2.5s infinite;
+}
+
+.animate-glow-text {
+  animation: textGradientGlow 3s ease-in-out infinite;
+}
+
+.shimmer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.25) 50%, transparent 100%);
+  transform: translateX(-150%);
+  animation: shimmer 3s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface-alt);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-light);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand);
+}

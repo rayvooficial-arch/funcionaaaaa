@@ -1,0 +1,6 @@
+{
+  "name": "KIT DE ALFABETIZAÇÃO Ler & Brincar",
+  "description": "Seu filho lendo com confiança em poucas semanas com atividades lúdicas e metodologia simples.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

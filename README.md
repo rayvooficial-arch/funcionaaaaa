@@ -1,11 +1,25 @@
-<div align="center">
+# Custom design system (TanStack Start)
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+A deliberately bare [TanStack Start](https://tanstack.com/start) + React starter
+for building a design system from scratch. No CSS framework, no component
+library, no theme tokens — just a router, a blank page, and a plain-CSS reset.
+Bring your own styling approach.
 
-  <h1>Built with AI Studio</h2>
+## What's (intentionally) not here
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+- No Tailwind, no PostCSS, no `components.json`
+- No shadcn/ui or Radix primitives
+- No theme tokens or design system — `src/styles.css` is a minimal reset
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## Stack
 
-</div>
+- TanStack Start + TanStack Router (file-based routing under `src/routes/`)
+- React 19 + TypeScript
+- TanStack Query, Zod, Recharts, date-fns
+
+## Develop
+
+```sh
+bun install
+bun run dev
+```
