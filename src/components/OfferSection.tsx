@@ -37,7 +37,7 @@ export const OfferSection: React.FC = () => {
 
             {/* Plan Title */}
             <h3 className="font-display text-xl sm:text-2xl font-black text-[var(--color-text-title)] tracking-tight mb-2">
-              Livro de Grafismo Fonético
+              Livro de Grafismo Fonético - Ler & Brincar
             </h3>
 
             {/* Stars & Reviews */}
@@ -141,7 +141,7 @@ export const OfferSection: React.FC = () => {
 
             {/* Plan Title */}
             <h3 className="font-display text-xl sm:text-2xl font-black text-[var(--color-text-title)] tracking-tight mb-2">
-              Livro de Grafismo Fonético + 6 Bônus Exclusivos
+              Kit Completo - Livro de Grafismo Fonético - Ler & Brincar + 6 Bônus Exclusivos
             </h3>
 
             {/* Image Mockup */}

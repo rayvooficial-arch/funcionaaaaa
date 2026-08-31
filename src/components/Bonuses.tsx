@@ -16,11 +16,11 @@ export const Bonuses: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="font-display text-2xl sm:text-3xl md:text-[38px] font-extrabold text-[var(--color-text-title)] tracking-tight leading-snug max-w-3xl mx-auto">
-            🎁 E ainda recebe estes{" "}
+            Com o kit completo você ainda recebe estes{" "}
             <span className="text-[var(--color-cta)] bg-[var(--color-cta)]/10 px-2.5 py-0.5 rounded-xl border border-[var(--color-cta)]/20 inline-block my-0.5">
-              Super Bônus
+              super bônus
             </span>{" "}
-            para acelerar o aprendizado! 📚
+            para acelerar ainda mais o aprendizado!
           </h2>
 
           <p className="text-sm sm:text-base text-[var(--color-text-secondary)] font-medium mt-3 max-w-xl mx-auto">
