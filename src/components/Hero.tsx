@@ -18,33 +18,26 @@ export const Hero: React.FC = () => {
       id="hero"
       className="relative pt-6 pb-14 sm:pt-10 sm:pb-24 overflow-hidden bg-gradient-to-b from-[var(--color-bg-alt)] via-[var(--color-bg-page)] to-[var(--color-bg-page)]"
     >
-      {/* 3D Floating Toys & Elements with Depth Blur */}
-      <Hero3DBackground />
-
-      {/* Dynamic Background Halos & CSS Floating Elements */}
+      {/* Dynamic Background Halos */}
       <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[760px] h-[380px] bg-gradient-to-b from-[var(--color-primary)]/12 via-[var(--color-primary-light)]/10 to-transparent rounded-full blur-3xl pointer-events-none animate-glow-pulse" />
       <div className="absolute top-1/3 -left-20 w-80 h-80 bg-[var(--color-yellow)]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-1/2 -right-20 w-80 h-80 bg-[var(--color-pink)]/10 rounded-full blur-3xl pointer-events-none" />
-
-      {/* Floating Star & Doodle Accents */}
-      <div className="absolute top-12 left-8 pointer-events-none opacity-60 hidden md:block">
-        <StarSpark color="var(--color-yellow)" size={32} className="animate-float-slow" />
-      </div>
-      <div className="absolute top-28 right-12 pointer-events-none opacity-60 hidden md:block">
-        <StarSpark color="var(--color-pink)" size={28} className="animate-float-reverse" />
-      </div>
-      <div className="absolute top-1/2 left-4 pointer-events-none opacity-40 hidden lg:block">
-        <WavyDoodle color="var(--color-primary-light)" />
-      </div>
-      <div className="absolute top-2/3 right-8 pointer-events-none opacity-40 hidden lg:block">
-        <WavyDoodle color="var(--color-yellow)" />
-      </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center">
         
         {/* Brand Header */}
         <div className="mb-4 sm:mb-6">
           {/* Logo removida conforme solicitado */}
+        </div>
+
+        {/* Social Proof / Approval Badge */}
+        <div className="flex justify-center mb-5">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 sm:px-5 sm:py-2 bg-white rounded-full shadow-[0_2px_10px_rgba(0,0,0,0.03)] border border-[var(--color-primary)]/15">
+            <Sparkles className="w-4 h-4 text-[var(--color-yellow)]" strokeWidth={2.5} />
+            <span className="text-[13px] sm:text-sm font-bold text-[var(--color-primary)] tracking-wide">
+              Material aprovado por pedagogos
+            </span>
+          </div>
         </div>
 
         {/* Main Headline with playful pedagogical identity highlight for 'confiança' */}
@@ -56,14 +49,6 @@ export const Hero: React.FC = () => {
               className="absolute -inset-x-3 sm:-inset-x-4 -inset-y-1 sm:-inset-y-1.5 bg-gradient-to-r from-[var(--color-primary-bg)] via-[var(--color-yellow-light)] to-[var(--color-pink-light)] rounded-2xl sm:rounded-3xl border-2 border-[var(--color-primary)]/25 shadow-[0_4px_16px_var(--color-shadow-neutral)] -z-10"
               aria-hidden="true"
             />
-
-            {/* Sparkle Star Decors on Corners */}
-            <span className="absolute -top-3.5 -left-3 pointer-events-none hidden sm:block animate-float-slow">
-              <StarSpark color="var(--color-primary)" size={18} />
-            </span>
-            <span className="absolute -top-3.5 -right-3 pointer-events-none hidden sm:block animate-wiggle">
-              <StarSpark color="var(--color-yellow)" size={20} />
-            </span>
 
             {/* Glowing & High-Contrast Typography */}
             <span className="relative z-10 font-black px-1.5 text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-primary-dark)] to-[var(--color-primary)] inline-block tracking-normal">
@@ -109,11 +94,11 @@ export const Hero: React.FC = () => {
 
           {/* Floating 3D Image Wrapper */}
           <div className="relative animate-hero-float transition-transform duration-300 hover:scale-[1.02]">
-            {/* Top-Right Badge: KIT COMPLETO IMPRIMÍVEL (50% inside, 50% outside) */}
+            {/* Top-Right Badge: +250 ATIVIDADES (50% inside, 50% outside) */}
             <div className="absolute -top-3 -right-2 sm:-top-4 sm:-right-4 z-30 pointer-events-none">
               <div className="bg-gradient-to-r from-[var(--color-cta)] via-[var(--color-cta-dark)] to-[var(--color-cta-dark)] text-[var(--color-on-action)] px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full font-black text-[11px] sm:text-xs md:text-sm tracking-wide shadow-xl shadow-[var(--color-cta)]/35 border-2 border-[var(--color-overlay-border)] flex items-center gap-1.5 whitespace-nowrap animate-wiggle">
                 <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[var(--color-yellow-light)] fill-[var(--color-yellow-light)] shrink-0" />
-                <span>KIT COMPLETO IMPRIMÍVEL</span>
+                <span>+250 ATIVIDADES</span>
               </div>
             </div>
 
