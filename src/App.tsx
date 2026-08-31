@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { trackEvent } from "./config";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { PainPoints } from "./components/PainPoints";
@@ -17,6 +18,12 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
 export default function App() {
+  useEffect(() => {
+    trackEvent("ViewContent", {
+      content_name: "Kit Alfabetizacao Home",
+      content_category: "Landing Page",
+    });
+  }, []);
   return (
     <div className="flex min-h-screen flex-col bg-[var(--color-bg-page)] text-[var(--color-text-body)] selection:bg-[var(--color-primary)]/20 selection:text-[var(--color-primary)]">
       <Navbar />

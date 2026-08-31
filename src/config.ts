@@ -74,6 +74,38 @@ declare global {
 }
 
 /**
+ * Função utilitária para enviar eventos para o Pixel no navegador e via API de Conversões (CAPI)
+ */
+export const trackEvent = async (eventName: string, customData: Record<string, unknown> = {}) => {
+  if (typeof window === "undefined") return;
+
+  // Gerar um Event ID único para deduplicação (Pixel vs CAPI)
+  const eventId = typeof crypto !== "undefined" && typeof crypto.randomUUID === "function"
+    ? crypto.randomUUID()
+    : Math.random().toString(36).substring(2, 15);
+
+  // 1. Browser Pixel (fbq)
+  if (typeof window.fbq === "function") {
+    try {
+      window.fbq("track", eventName, customData, { eventID: eventId });
+    } catch {
+      // Ignora silenciosamente
+    }
+  }
+
+  // 2. Meta Conversions API (via backend)
+  try {
+    await fetch("/api/track", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ eventName, customData, eventId }),
+    });
+  } catch (e) {
+    console.warn("CAPI Track Error:", e);
+  }
+};
+
+/**
  * Função utilitária para anexar todos os parâmetros de rastreamento (UTMs, fbclid, src, sck) à URL do Checkout
  */
 export const buildCheckoutUrlWithTracking = (baseUrl: string): string => {
@@ -122,21 +154,18 @@ export const handleCheckoutClick = (plan: "basic" | "premium" = "premium", e?: R
   const selectedPlan = plan === "premium" ? PLANS.premium : PLANS.basic;
   const numericPrice = plan === "premium" ? 29.90 : 22.90;
 
-  // 1. Disparo do Evento InitiateCheckout para o Meta Pixel
-  if (typeof window !== "undefined" && typeof window.fbq === "function") {
-    try {
-      window.fbq("track", "InitiateCheckout", {
-        content_name: selectedPlan.name,
-        content_category: "Kit Alfabetização",
-        value: numericPrice,
-        currency: "BRL",
-        num_items: 1,
-      });
-    } catch {
-      // Ignora silenciosamente em caso de bloqueador de anúncios
-    }
-  }
+  // 1. Disparo dos Eventos InitiateCheckout e AddToCart (Pixel + CAPI)
+  const eventData = {
+    content_name: selectedPlan.name,
+    content_category: "Kit Alfabetizacao",
+    value: numericPrice,
+    currency: "BRL",
+    num_items: 1,
+  };
   
+  trackEvent("AddToCart", eventData);
+  trackEvent("InitiateCheckout", eventData);
+
   if (targetUrl && !targetUrl.startsWith("#")) {
     const urlWithParams = buildCheckoutUrlWithTracking(targetUrl);
     window.location.href = urlWithParams;

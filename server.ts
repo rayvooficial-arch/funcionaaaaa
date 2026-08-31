@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import path from "path";
+import crypto from "crypto";
 import { createServer as createViteServer } from "vite";
 
 export interface CaktoCustomer {
@@ -96,13 +97,67 @@ const DEFAULT_SECRETS = [
   "5q4fPClpsdySPasfDSLrWjV5Mdq5vtUh15W7",
   "f8c3de3d-1fea-4d7c-a8b0-29f63c4c3454",
 ];
+
 const webhookHistory: Array<{ receivedAt: string; event: string; itemsCount: number; data: CaktoOrderItem[] }> = [];
+
+// --- Meta Conversions API Helpers ---
+const hashData = (data: string | undefined | null) => {
+  if (!data) return undefined;
+  return crypto.createHash('sha256').update(data.trim().toLowerCase()).digest('hex');
+};
+
+const sendMetaCAPIEvent = async (
+  eventName: string,
+  userData: { email?: string; phone?: string; clientIpAddress?: string; clientUserAgent?: string; fbp?: string; fbc?: string },
+  customData: any,
+  eventId?: string
+) => {
+  const pixelId = process.env.META_PIXEL_ID || '1383508423908783';
+  const accessToken = process.env.META_ACCESS_TOKEN;
+
+  if (!accessToken) {
+    console.warn(`[CAPI WARN] META_ACCESS_TOKEN is not set. Event ${eventName} will not be sent to Meta.`);
+    return;
+  }
+
+  const payload = {
+    data: [
+      {
+        event_name: eventName,
+        event_time: Math.floor(Date.now() / 1000),
+        action_source: "website",
+        event_id: eventId,
+        user_data: {
+          client_ip_address: userData.clientIpAddress,
+          client_user_agent: userData.clientUserAgent,
+          em: userData.email ? [hashData(userData.email)] : undefined,
+          ph: userData.phone ? [hashData(userData.phone)] : undefined,
+          fbp: userData.fbp,
+          fbc: userData.fbc,
+        },
+        custom_data: customData,
+      }
+    ]
+  };
+
+  try {
+    const response = await fetch(`https://graph.facebook.com/v19.0/${pixelId}/events?access_token=${accessToken}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const result = await response.json();
+    console.log(`[CAPI SUCCESS] Event ${eventName} sent:`, result);
+  } catch (err) {
+    console.error(`[CAPI ERROR] Failed to send event ${eventName}:`, err);
+  }
+};
 
 async function startServer() {
   const app = express();
   const PORT = 3000;
 
-  // JSON Body Parser for webhook payloads
+  // JSON Body Parser
   app.use(express.json({ limit: "10mb" }));
   app.use(express.urlencoded({ extended: true }));
 
@@ -111,8 +166,38 @@ async function startServer() {
     res.json({ status: "ok", timestamp: new Date().toISOString() });
   });
 
-  // Webhook handler function (supports /api/webhook and /api/webhook/cakto)
-  const handleWebhook = (req: Request, res: Response) => {
+  // Client-side event tracking proxy for CAPI (ViewContent, AddToCart, InitiateCheckout)
+  app.post("/api/track", async (req: Request, res: Response) => {
+    const { eventName, customData, eventId } = req.body;
+    if (!eventName) {
+      return res.status(400).json({ error: "eventName is required" });
+    }
+
+    const clientIpAddress = req.ip || req.headers['x-forwarded-for'] as string;
+    const clientUserAgent = req.headers['user-agent'];
+
+    // Safely extract FBP/FBC cookies if sent via headers or standard parsing
+    const cookieHeader = req.headers.cookie || '';
+    const fbpMatch = cookieHeader.match(/_fbp=([^;]+)/);
+    const fbcMatch = cookieHeader.match(/_fbc=([^;]+)/);
+
+    await sendMetaCAPIEvent(
+      eventName, 
+      {
+        clientIpAddress,
+        clientUserAgent,
+        fbp: fbpMatch ? fbpMatch[1] : undefined,
+        fbc: fbcMatch ? fbcMatch[1] : undefined,
+      },
+      customData,
+      eventId
+    );
+
+    res.json({ success: true });
+  });
+
+  // Webhook handler function
+  const handleWebhook = async (req: Request, res: Response) => {
     const payload = req.body as CaktoWebhookPayload;
     const configuredSecret = process.env.API_SECRET_KEY || process.env.CAKTO_WEBHOOK_SECRET;
     const validSecrets = configuredSecret ? [configuredSecret, ...DEFAULT_SECRETS] : DEFAULT_SECRETS;
@@ -121,70 +206,63 @@ async function startServer() {
     console.log(`\n========================================`);
     console.log(`[WEBHOOK RECEIVED] ${new Date().toISOString()}`);
     console.log(`Event: ${payload?.event || "unknown_event"}`);
-    console.log(`Secret Match: ${isSecretValid ? "YES" : "NO"}`);
-
+    
     if (payload?.secret && !isSecretValid) {
-      console.warn(`[WEBHOOK WARN] Secret mismatch! Received: ${payload.secret}`);
+      console.warn(`[WEBHOOK WARN] Secret mismatch!`);
     }
 
     const event = payload?.event || "unknown_event";
     const dataItems = Array.isArray(payload?.data) ? payload.data : [];
 
-    console.log(`Processed Orders Count: ${dataItems.length}`);
-
-    dataItems.forEach((item, index) => {
+    dataItems.forEach(async (item, index) => {
       console.log(`--- Item #${index + 1} (${item.offer_type || "main"}) ---`);
-      console.log(`  Order ID: ${item.id} (Ref: ${item.refId || "N/A"})`);
-      console.log(`  Customer: ${item.customer?.name || "N/A"} <${item.customer?.email || "N/A"}>`);
-      console.log(`  Product: ${item.product?.name || "N/A"} (Offer: ${item.offer?.name || "N/A"})`);
-      console.log(`  Status: ${item.status} | Value: R$ ${item.amount} (${item.paymentMethodName || item.paymentMethod || "N/A"})`);
-      if (item.parent_order) {
-        console.log(`  Parent Order ID: ${item.parent_order}`);
+      console.log(`  Order ID: ${item.id} | Status: ${item.status} | Value: R$ ${item.amount}`);
+      
+      // If purchase approved, send CAPI Event
+      if (event === "purchase_approved" && item.status === "paid") {
+        await sendMetaCAPIEvent(
+          "Purchase",
+          {
+            email: item.customer?.email,
+            phone: item.customer?.phone || undefined,
+            fbp: item.fbp || undefined,
+            fbc: item.fbc || undefined,
+          },
+          {
+            currency: "BRL",
+            value: item.amount,
+            content_name: item.product?.name,
+            content_ids: [item.product?.id || item.offer?.id],
+            content_type: "product"
+          },
+          item.id // Use Order ID as Event ID to deduplicate
+        );
       }
     });
     console.log(`========================================\n`);
 
-    // Store in recent webhook history (keep last 50)
+    // Store in recent webhook history
     webhookHistory.unshift({
       receivedAt: new Date().toISOString(),
       event,
       itemsCount: dataItems.length,
       data: dataItems,
     });
-    if (webhookHistory.length > 50) {
-      webhookHistory.pop();
-    }
+    if (webhookHistory.length > 50) webhookHistory.pop();
 
-    return res.status(200).json({
-      success: true,
-      message: "Webhook processed successfully",
-      event: event,
-      itemsCount: dataItems.length,
-      receivedAt: new Date().toISOString(),
-    });
+    return res.status(200).json({ success: true });
   };
 
-  // Webhook Status / Documentation endpoint
+  // Webhook endpoints
   app.get(["/api/webhook", "/api/webhook/cakto"], (_req: Request, res: Response) => {
     res.json({
       status: "active",
-      message: "Cakto Webhook receiver is ready to accept events",
-      endpoint: "/api/webhook",
-      expectedSecret: DEFAULT_SECRET,
       recentEventsReceived: webhookHistory.length,
-      sampleExpectedEvents: ["purchase_approved", "purchase_canceled", "purchase_refunded", "purchase_chargedback"],
     });
   });
-
-  // Webhook Logs endpoint
   app.get("/api/webhook/logs", (_req: Request, res: Response) => {
-    res.json({
-      total: webhookHistory.length,
-      logs: webhookHistory,
-    });
+    res.json({ total: webhookHistory.length, logs: webhookHistory });
   });
-
-  // Webhook POST endpoints
   app.post(["/api/webhook", "/api/webhook/cakto"], handleWebhook);
 
   // Vite middleware for development vs static files in production
