@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from "react";
+import fs from 'fs';
+
+let content = `import React, { useState, useEffect } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import img1 from "../assets/images/IMG-9547.jpg";
 import img2 from "../assets/images/IMG-9642.jpg";
 import img3 from "../assets/images/IMG-9643.jpg";
 import img4 from "../assets/images/IMG-9644.jpg";
 import img5 from "../assets/images/IMG-9645 (1).jpg";
+import img6 from "../assets/images/IMG-9645.jpg";
 
 export const Testimonials: React.FC = () => {
-  const images = [img1, img2, img3, img4, img5];
+  const images = [img1, img2, img3, img4, img5, img6];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
@@ -35,13 +38,13 @@ export const Testimonials: React.FC = () => {
         
         <div className="relative max-w-sm md:max-w-md mx-auto">
           {/* Carousel Container */}
-          <div className="overflow-hidden rounded-2xl shadow-xl border-4 border-slate-50 relative bg-slate-100 transition-all duration-500">
+          <div className="overflow-hidden rounded-2xl shadow-xl border-4 border-slate-50 relative aspect-[9/16] bg-slate-100 flex items-center justify-center">
             {images.map((img, idx) => (
               <img 
                 key={idx}
                 src={img} 
-                alt={`Avaliação ${idx + 1}`} 
-                className={`w-full h-auto object-contain transition-opacity duration-500 ${idx === currentIndex ? "relative opacity-100 z-10" : "absolute top-0 left-0 opacity-0 z-0"}`}
+                alt={\`Avaliação \${idx + 1}\`} 
+                className={\`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 \${idx === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"}\`}
               />
             ))}
           </div>
@@ -67,7 +70,7 @@ export const Testimonials: React.FC = () => {
               <button
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
-                className={`w-2.5 h-2.5 rounded-full transition-colors ${idx === currentIndex ? "bg-[var(--color-primary)]" : "bg-slate-300"}`}
+                className={\`w-2.5 h-2.5 rounded-full transition-colors \${idx === currentIndex ? "bg-[var(--color-primary)]" : "bg-slate-300"}\`}
               />
             ))}
           </div>
@@ -76,3 +79,6 @@ export const Testimonials: React.FC = () => {
     </section>
   );
 };
+`;
+
+fs.writeFileSync('src/components/Testimonials.tsx', content);

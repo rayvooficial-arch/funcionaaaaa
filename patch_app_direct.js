@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import fs from 'fs';
+const app = `import React, { useEffect } from "react";
 import { trackEvent } from "./config";
 import { TopBanner } from "./components/TopBanner";
 import { Hero } from "./components/Hero";
@@ -42,3 +43,5 @@ export default function App() {
     </div>
   );
 }
+`;
+fs.writeFileSync('src/App.tsx', app);

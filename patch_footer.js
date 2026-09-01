@@ -1,9 +1,13 @@
-import React from "react";
+import fs from 'fs';
+const newFooter = `import React from "react";
+
 export const Footer: React.FC = () => {
   return (
     <footer className="py-8 bg-slate-900 text-slate-400 text-center text-sm">
       <div className="container mx-auto px-4">
-        <p className="mb-4">© 2026 Pequenos Leitores. Todos os direitos reservados.</p>
+        <p className="mb-4">
+          © 2026 Livro de Grafismo Fonético. Todos os direitos reservados.
+        </p>
         <div className="flex justify-center gap-6 mb-6">
           <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
           <a href="#" className="hover:text-white transition-colors">Privacidade</a>
@@ -15,3 +19,5 @@ export const Footer: React.FC = () => {
     </footer>
   );
 };
+`;
+fs.writeFileSync('src/components/Footer.tsx', newFooter);

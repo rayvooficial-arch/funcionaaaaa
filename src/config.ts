@@ -4,8 +4,8 @@ import React from "react";
  * CONFIGURAÇÃO DO CHECKOUT
  * Substitua as URLs abaixo pelos links dos seus checkouts de pagamento (ex: Kiwify, Hotmart, Eduzz, Kirvano, Cakto, etc.)
  */
-export const CHECKOUT_URL_BASIC = "https://pay.cakto.com.br/m9qtssx_1073217";
-export const CHECKOUT_URL_PREMIUM = "https://pay.cakto.com.br/63bhgoa_1073228";
+export const CHECKOUT_URL_BASIC = "https://pay.wiapy.com/6a97631370d6d30424e366b4";
+export const CHECKOUT_URL_PREMIUM = "https://pay.wiapy.com/6a97631370d6d30424e366b4";
 
 export const PRODUCT_INFO = {
   name: "KIT DE ALFABETIZAÇÃO Ler & Brincar",
@@ -152,11 +152,11 @@ export const buildCheckoutUrlWithTracking = (baseUrl: string): string => {
 export const handleCheckoutClick = (plan: "basic" | "premium" = "premium", e?: React.MouseEvent) => {
   const targetUrl = plan === "premium" ? CHECKOUT_URL_PREMIUM : CHECKOUT_URL_BASIC;
   const selectedPlan = plan === "premium" ? PLANS.premium : PLANS.basic;
-  const numericPrice = plan === "premium" ? 29.90 : 22.90;
+  const numericPrice = 9.90;
 
   // 1. Disparo dos Eventos InitiateCheckout e AddToCart (Pixel + CAPI)
   const eventData = {
-    content_name: selectedPlan.name,
+    content_name: "+400 Atividades de Grafismo Fonético",
     content_category: "Kit Alfabetizacao",
     value: numericPrice,
     currency: "BRL",
