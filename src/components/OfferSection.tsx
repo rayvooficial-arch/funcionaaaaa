@@ -1,7 +1,7 @@
 import React from "react";
 import { Check, ShieldCheck, Lock } from "lucide-react";
 import { handleCheckoutClick } from "../config";
-import imagemPacoteCompleto from "../assets/images/mockup_kit_grafismo_1788303716716.jpg";
+import imagemPacoteCompleto from "../assets/images/1a2407bd-2c68-409c-ab80-18ec26e94ce4.webp";
 
 export const OfferSection: React.FC = () => {
   return (

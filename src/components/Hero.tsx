@@ -1,7 +1,7 @@
 import React from "react";
 import { Check } from "lucide-react";
 import { scrollToOffer } from "../config";
-import heroImageAsset from "../assets/images/mockup_kit_grafismo_1788303716716.jpg";
+import heroImageAsset from "../assets/images/1a2407bd-2c68-409c-ab80-18ec26e94ce4.webp";
 
 export const Hero: React.FC = () => {
   return (
