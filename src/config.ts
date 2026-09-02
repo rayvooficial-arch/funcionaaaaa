@@ -179,3 +179,11 @@ export const handleCheckoutClick = (plan: "basic" | "premium" = "premium", e?: R
 };
 
 
+
+export const scrollToOffer = (e?: React.MouseEvent) => {
+  if (e) e.preventDefault();
+  const offerElement = document.getElementById("oferta");
+  if (offerElement) {
+    offerElement.scrollIntoView({ behavior: "smooth" });
+  }
+};

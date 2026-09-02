@@ -1,6 +1,6 @@
 import React from "react";
 import { Check } from "lucide-react";
-import { handleCheckoutClick } from "../config";
+import { scrollToOffer } from "../config";
 import heroImageAsset from "../assets/images/mockup_kit_grafismo_1788303716716.jpg";
 
 export const Hero: React.FC = () => {
@@ -23,7 +23,7 @@ export const Hero: React.FC = () => {
             <img src={heroImageAsset} alt="Mockup Pequenos Leitores" className="w-full h-auto object-contain rounded-2xl drop-shadow-xl mx-auto" />
           </div>
 
-          <button onClick={(e) => handleCheckoutClick("premium", e)} id="hero-cta-button" className="bg-[var(--color-cta)] text-[var(--color-on-action)] hover:opacity-90 px-10 py-5 rounded-full text-xl md:text-2xl font-bold transition-all flex items-center justify-center gap-3 mx-auto cursor-pointer shadow-xl shadow-[var(--color-cta)]/30 animate-cta-pulse w-full md:w-auto">
+          <button onClick={(e) => scrollToOffer(e)} id="hero-cta-button" className="bg-[var(--color-cta)] text-[var(--color-on-action)] hover:opacity-90 px-10 py-5 rounded-full text-xl md:text-2xl font-bold transition-all flex items-center justify-center gap-3 mx-auto cursor-pointer shadow-xl shadow-[var(--color-cta)]/30 animate-cta-pulse w-full md:w-auto">
             👉 Quero as atividades
           </button>
 
