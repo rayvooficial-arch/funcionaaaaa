@@ -14,7 +14,7 @@ export const OfferSection: React.FC = () => {
           <img src={imagemPacoteCompleto} alt="Kit Completo" className="w-full h-auto block max-h-[350px] object-cover" />
           <div className="p-6 md:p-8 pt-4 md:pt-4 flex flex-col items-center">
             <div className="space-y-1 mb-6 text-center">
-              <p className="text-[var(--color-cta)] font-bold text-lg line-through opacity-80">De R$ 67,00</p>
+              <p className="text-[var(--color-action)] font-bold text-lg line-through opacity-80">De R$ 67,00</p>
               <p className="text-slate-700 text-lg font-bold">Por Apenas:</p>
               <p className="text-[var(--color-primary)] font-display font-black text-6xl mb-2">R$ 9,90</p>
             </div>

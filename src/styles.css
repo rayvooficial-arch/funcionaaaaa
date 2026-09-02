@@ -36,10 +36,10 @@
   --color-action-shadow-hover: rgba(225, 29, 72, 0.65);
 
   /* Legacy Action Aliases */
-  --color-cta: var(--color-action);
-  --color-cta-dark: var(--color-action-strong);
-  --color-cta-light: var(--color-action-light);
-  --color-cta-bg: var(--color-action-bg);
+  --color-cta: var(--color-success);
+  --color-cta-dark: var(--color-success-strong);
+  --color-cta-light: var(--color-success-light);
+  --color-cta-bg: var(--color-success-bg);
 
   /* ==========================================================================
      3. FEEDBACK / CONFIANÇA & SUCESSO
@@ -182,8 +182,8 @@
   --shadow-card-hover: 0 18px 36px -6px rgba(79, 70, 229, 0.22);
   --shadow-action: 0 12px 28px -4px var(--color-action-shadow);
   --shadow-action-hover: 0 16px 34px -4px var(--color-action-shadow-hover);
-  --shadow-cta: var(--shadow-action);
-  --shadow-cta-hover: var(--shadow-action-hover);
+  --shadow-cta: var(--shadow-success);
+  --shadow-cta-hover: var(--shadow-success);
   --shadow-success: 0 10px 25px -4px var(--color-success-shadow);
 
   /* ==========================================================================
@@ -194,8 +194,8 @@
   --gradient-hero-title: linear-gradient(to right, var(--color-brand), var(--color-brand-strong), var(--color-success));
   --gradient-hero-pillow: linear-gradient(to right, var(--color-brand-bg), var(--color-surface-warm), var(--color-action-bg));
   --gradient-action: linear-gradient(135deg, var(--color-action) 0%, var(--color-action-strong) 60%, #9F1239 100%);
-  --gradient-cta: var(--gradient-action);
-  --gradient-cta-card: linear-gradient(to right, var(--color-action), var(--color-action-strong));
+  --gradient-cta: var(--gradient-success);
+  --gradient-cta-card: linear-gradient(to right, var(--color-success), var(--color-success-strong));
   --gradient-success: linear-gradient(to right, var(--color-success), var(--color-success-strong));
   --gradient-warm: linear-gradient(to bottom, var(--color-surface), var(--color-surface-warm), var(--color-surface));
   --gradient-pain: linear-gradient(to bottom, var(--color-surface), var(--color-action-bg), var(--color-surface-warm));
@@ -242,7 +242,7 @@ h1, h2, h3, h4, .font-display {
 /* Primary High-Conversion CTA Button */
 .btn-brand-cta {
   background: var(--gradient-action);
-  box-shadow: var(--shadow-action);
+  box-shadow: var(--shadow-success);
   color: var(--color-text-white);
   border-radius: 9999px;
   font-family: var(--font-display);
@@ -255,7 +255,7 @@ h1, h2, h3, h4, .font-display {
 
 .btn-brand-cta:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-action-hover);
+  box-shadow: var(--shadow-success);
   filter: brightness(1.05);
 }
 
@@ -345,8 +345,8 @@ h1, h2, h3, h4, .font-display {
 }
 
 @keyframes ctaPulse {
-  0%, 100% { transform: scale(1); box-shadow: var(--shadow-action); }
-  50% { transform: scale(1.018); box-shadow: var(--shadow-action-hover); }
+  0%, 100% { transform: scale(1); box-shadow: var(--shadow-success); }
+  50% { transform: scale(1.018); box-shadow: var(--shadow-success); }
 }
 
 @keyframes shimmer {
