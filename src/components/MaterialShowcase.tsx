@@ -1,7 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { VolumeX } from "lucide-react";
 
 export const MaterialShowcase: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [showUnmuteOverlay, setShowUnmuteOverlay] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -19,8 +21,9 @@ export const MaterialShowcase: React.FC = () => {
               playPromise.catch((error) => {
                 console.log("Autoplay com som bloqueado pelo navegador. Tentando sem som.", error);
                 // Fallback: se o navegador bloquear (ex: usuário não interagiu com a página ainda),
-                // toca o vídeo mudo para não ficar travado.
+                // toca o vídeo mudo para não ficar travado e exibe o botão para ligar o som.
                 video.muted = true;
+                setShowUnmuteOverlay(true);
                 video.play().catch(() => {
                   console.log("Autoplay totalmente bloqueado.");
                 });
@@ -44,11 +47,20 @@ export const MaterialShowcase: React.FC = () => {
     };
   }, []);
 
+  const handleUnmute = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (videoRef.current) {
+      videoRef.current.muted = false;
+      videoRef.current.play(); // Garante que continua tocando
+      setShowUnmuteOverlay(false);
+    }
+  };
+
   return (
     <section className="py-12 bg-white">
       <div className="max-w-4xl mx-auto text-center px-4">
         <h2 className="text-3xl md:text-4xl mb-10 font-bold text-slate-800 tracking-tight">
-          COMO ENSINAR O SEU FILHO A LER <span className="text-[var(--color-primary)]">EM 3 DIAS:</span>
+          Veja como ensinar o seu filho a ler <span className="text-[var(--color-primary)]">em 3 dias:</span>
         </h2>
         
         <div className="relative w-fit max-w-full mx-auto rounded-[32px] overflow-hidden shadow-2xl border-4 border-slate-50 bg-black flex items-center justify-center">
@@ -56,10 +68,22 @@ export const MaterialShowcase: React.FC = () => {
             ref={videoRef}
             src="/grafismo.mp4"
             className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto"
-            controls
+            controls={!showUnmuteOverlay}
             loop
             playsInline
           />
+          
+          {showUnmuteOverlay && (
+            <div 
+              className="absolute inset-0 bg-black/40 flex items-center justify-center cursor-pointer z-10 transition-opacity"
+              onClick={handleUnmute}
+            >
+              <div className="bg-[var(--color-primary)] text-white px-6 py-4 rounded-full font-bold flex items-center gap-3 shadow-[0_0_40px_rgba(255,107,158,0.6)] animate-pulse scale-105 hover:scale-110 transition-transform">
+                <VolumeX className="w-6 h-6" />
+                <span className="text-lg">Toque para ouvir o som</span>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

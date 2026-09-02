@@ -20,7 +20,7 @@ export const Hero: React.FC = () => {
           </p>
 
           <div className="mb-8 max-w-2xl mx-auto">
-            <img src={heroImageAsset} alt="Mockup Pequenos Leitores" className="w-full h-auto object-contain rounded-2xl drop-shadow-xl mx-auto" />
+            <img src={heroImageAsset} alt="Mockup Ler e Brincar" className="w-full h-auto object-contain rounded-2xl drop-shadow-xl mx-auto" />
           </div>
 
           <button onClick={(e) => scrollToOffer(e)} id="hero-cta-button" className="bg-[var(--color-cta)] text-[var(--color-on-action)] hover:opacity-90 px-10 py-5 rounded-full text-xl md:text-2xl font-bold transition-all flex items-center justify-center gap-3 mx-auto cursor-pointer shadow-xl shadow-[var(--color-cta)]/30 animate-cta-pulse w-full md:w-auto">

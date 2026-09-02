@@ -1,5 +1,4 @@
 import React from "react";
-import { Gift } from "lucide-react";
 import bonus1 from "../assets/images/bonus_1_atividades_extras_1788305066634.jpg";
 import bonus2 from "../assets/images/bonus_2_treino_leitura_1788305083257.jpg";
 import bonus3 from "../assets/images/bonus_3_jogo_memoria_1788305092062.jpg";
@@ -23,7 +22,7 @@ export const BonusesSection: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-6">
           {bonuses.map((bonus, idx) => (
             <div key={idx} className="bg-white rounded-[24px] border-2 border-[var(--color-primary)]/20 relative shadow-sm overflow-hidden flex flex-col group hover:border-[var(--color-primary)]/50 transition-colors">
-              <div className="absolute top-4 right-4 bg-[var(--color-success)] text-white px-4 py-1.5 rounded-full text-xs font-black uppercase shadow-sm z-10">Grátis</div>
+              <div className="absolute top-4 right-4 bg-[var(--color-primary)] text-white px-4 py-1.5 rounded-full text-xs font-black uppercase shadow-sm z-10">Bônus</div>
               
               <div className="w-full bg-white p-6 flex justify-center items-center relative overflow-hidden group-hover:bg-slate-50 transition-colors">
                 <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -32,13 +31,12 @@ export const BonusesSection: React.FC = () => {
 
               <div className="p-6 md:p-8 pt-4 flex-grow flex flex-col">
                 <div className="flex items-start gap-3 mb-3">
-                  <div className="bg-[var(--color-primary)]/10 p-2.5 rounded-xl flex-shrink-0 mt-1"><Gift className="w-5 h-5 text-[var(--color-primary)]" /></div>
                   <h3 className="text-xl font-bold text-slate-800 leading-snug">{bonus.title}</h3>
                 </div>
                 <p className="text-slate-600 mb-6 text-[15px] font-medium leading-relaxed flex-grow">{bonus.desc}</p>
                 <div className="flex justify-between items-center border-t border-slate-100 pt-4 mt-auto">
                   <span className="text-slate-400 line-through text-sm font-bold">Valor Total: {bonus.price}</span>
-                  <span className="text-[var(--color-success)] font-black text-lg">Hoje: R$ 0,00</span>
+                  <span className="text-[var(--color-primary)] font-black text-lg">Hoje: R$ 0,00</span>
                 </div>
               </div>
             </div>
