@@ -1,13 +1,13 @@
 import React from "react";
 import { Check } from "lucide-react";
 import { scrollToOffer } from "../config";
-import heroImageAsset from "../assets/images/pagamento_seguro.jpg";
+import heroImageAsset from "../assets/images/1a2407bd-2c68-409c-ab80-18ec26e94ce4.webp";
 
 export const Hero: React.FC = () => {
   return (
-    <section id="hero" className="relative overflow-hidden bg-white bg-gradient-to-b from-[#55F7DB]/15 from-60% to-[#F75571]/15 pt-8 pb-6 md:pt-10 md:pb-8">
-      <div className="absolute top-10 left-10 w-64 h-64 bg-[var(--color-primary)]/10 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-80 h-80 bg-[var(--color-yellow)]/10 rounded-full blur-[100px] pointer-events-none" />
+    <section id="hero" className="relative overflow-hidden bg-white bg-gradient-to-b from-[#55F7DB]/5 from-60% to-[#F75571]/5 pt-8 pb-6 md:pt-10 md:pb-8">
+      <div className="absolute top-10 left-10 w-64 h-64 bg-[var(--color-primary)]/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-80 h-80 bg-[var(--color-yellow)]/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">

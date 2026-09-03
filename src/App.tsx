@@ -3,10 +3,11 @@ import { trackEvent } from "./config";
 import { TopBanner } from "./components/TopBanner";
 import { Hero } from "./components/Hero";
 import { BenefitsSection } from "./components/BenefitsSection";
+import { SampleCarousel } from "./components/SampleCarousel";
 import { MaterialShowcase } from "./components/MaterialShowcase";
+import { Testimonials } from "./components/Testimonials";
 import { BonusesSection } from "./components/BonusesSection";
 import { OfferSection } from "./components/OfferSection";
-import { Testimonials } from "./components/Testimonials";
 import { Guarantee } from "./components/Guarantee";
 import { FAQSection } from "./components/FAQSection";
 import { FinalCTA } from "./components/FinalCTA";
@@ -28,10 +29,11 @@ export default function App() {
       <main className="flex-grow">
         <Hero />
         <BenefitsSection />
+        <SampleCarousel />
         <MaterialShowcase />
+        <Testimonials />
         <BonusesSection />
         <OfferSection />
-        <Testimonials />
         <Guarantee />
         <FAQSection />
         <FinalCTA />

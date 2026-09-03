@@ -59,8 +59,8 @@ export const MaterialShowcase: React.FC = () => {
   return (
     <section className="py-12 bg-white">
       <div className="max-w-4xl mx-auto text-center px-4">
-        <h2 className="text-3xl md:text-4xl mb-10 font-bold text-slate-800 tracking-tight">
-          Veja como é fácil aprender a ler com o <span className="text-[var(--color-primary)]">Grafismo Fonético</span>
+        <h2 className="text-3xl md:text-4xl mb-10 font-bold text-slate-800 tracking-tight uppercase">
+          SEU FILHO LENDO EM POUCOS <span className="text-[var(--color-primary)]">DIAS!</span>
         </h2>
         
         <div className="relative w-fit max-w-full mx-auto rounded-[32px] overflow-hidden shadow-2xl border-4 border-slate-50 bg-black flex items-center justify-center">

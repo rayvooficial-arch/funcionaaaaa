@@ -13,8 +13,11 @@ export const BonusesSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 bg-slate-50">
-      <div className="max-w-5xl mx-auto px-4">
+    <section className="relative overflow-hidden bg-white bg-gradient-to-b from-[#55F7DB]/5 from-60% to-[#F75571]/5 pt-12 pb-12">
+      <div className="absolute top-10 right-10 w-64 h-64 bg-[var(--color-primary)]/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-80 h-80 bg-[var(--color-yellow)]/5 rounded-full blur-[100px] pointer-events-none" />
+
+      <div className="max-w-5xl mx-auto px-4 relative z-10">
         <h2 className="text-3xl md:text-4xl text-center mb-10 font-bold text-slate-800 tracking-tight">
           E ainda você recebe <span className="text-[var(--color-primary)]">4 Bônus Grátis:</span>
         </h2>
