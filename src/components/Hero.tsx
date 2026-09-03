@@ -2,6 +2,7 @@ import React from "react";
 import { Check } from "lucide-react";
 import { scrollToOffer } from "../config";
 import heroImageAsset from "../assets/images/1a2407bd-2c68-409c-ab80-18ec26e94ce4.webp";
+import logoImage from "../assets/images/logo_footer.png";
 
 export const Hero: React.FC = () => {
   return (
@@ -11,6 +12,9 @@ export const Hero: React.FC = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
+          <div className="flex justify-center mb-6 md:mb-8">
+            <img src={logoImage} alt="Logo Ler e Brincar" className="w-[80px] h-auto drop-shadow-sm" />
+          </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-800 leading-[1.1] mb-4 tracking-tight">
             +400 Atividades de <span className="text-[var(--color-primary)]">grafismo fonético</span> prontas e organizadas
           </h1>

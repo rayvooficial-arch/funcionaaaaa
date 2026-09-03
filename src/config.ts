@@ -154,7 +154,7 @@ export const handleCheckoutClick = (plan: "basic" | "premium" = "premium", e?: R
   const selectedPlan = plan === "premium" ? PLANS.premium : PLANS.basic;
   const numericPrice = 9.90;
 
-  // 1. Disparo dos Eventos InitiateCheckout e AddToCart (Pixel + CAPI)
+  // 1. Disparo do Evento InitiateCheckout (Pixel + CAPI)
   const eventData = {
     content_name: "+400 Atividades de Grafismo Fonético",
     content_category: "Kit Alfabetizacao",
@@ -163,7 +163,7 @@ export const handleCheckoutClick = (plan: "basic" | "premium" = "premium", e?: R
     num_items: 1,
   };
   
-  trackEvent("AddToCart", eventData);
+  // Removido AddToCart para evitar duplicidade no Meta Ads
   trackEvent("InitiateCheckout", eventData);
 
   if (targetUrl && !targetUrl.startsWith("#")) {

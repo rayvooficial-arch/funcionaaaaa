@@ -220,6 +220,10 @@ async function startServer() {
       
       // If purchase approved, send CAPI Event
       if (event === "purchase_approved" && item.status === "paid") {
+        /* 
+        Desativado a pedido do cliente para evitar Vendas duplicadas no Meta Ads.
+        A própria plataforma de checkout (Cakto/Kiwify) já envia este evento via integração nativa.
+        
         await sendMetaCAPIEvent(
           "Purchase",
           {
@@ -237,6 +241,8 @@ async function startServer() {
           },
           item.id // Use Order ID as Event ID to deduplicate
         );
+        */
+        console.log(`[CAPI] Evento de Purchase pulado para evitar duplicidade.`);
       }
     });
     console.log(`========================================\n`);
