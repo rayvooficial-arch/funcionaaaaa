@@ -2,7 +2,7 @@ import React from "react";
 
 /**
  * CONFIGURAÇÃO DO CHECKOUT
- * Substitua as URLs abaixo pelos links dos seus checkouts de pagamento (ex: Kiwify, Hotmart, Eduzz, Kirvano, Cakto, etc.)
+ * Substitua as URLs abaixo pelos links dos seus checkouts de pagamento (ex: Kiwify, Hotmart, Eduzz, Kirvano, etc.)
  */
 export const CHECKOUT_URL_BASIC = "https://pay.wiapy.com/6a97631370d6d30424e366b4";
 export const CHECKOUT_URL_PREMIUM = "https://pay.wiapy.com/6a97631370d6d30424e366b4";
