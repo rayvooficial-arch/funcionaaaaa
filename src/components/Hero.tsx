@@ -1,7 +1,7 @@
 import React from "react";
 import { Check } from "lucide-react";
 import { scrollToOffer } from "../config";
-import heroImageAsset from "../assets/images/Pagamento 100% seguro.jpg";
+import heroImageAsset from "../assets/images/pagamento_seguro.jpg";
 
 export const Hero: React.FC = () => {
   return (
