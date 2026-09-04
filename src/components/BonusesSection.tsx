@@ -17,7 +17,7 @@ export const BonusesSection: React.FC = () => {
 
       <div className="max-w-5xl mx-auto px-4 relative z-10">
         <h2 className="text-3xl md:text-4xl text-center mb-10 font-bold text-slate-800 tracking-tight">
-          E ainda você recebe <span className="text-[var(--color-primary)]">4 Bônus Grátis:</span>
+          🎁 Você ainda recebe 4 bônus exclusivos <span className="text-[var(--color-primary)]">(GRÁTIS)</span>
         </h2>
         
         <div className="grid grid-cols-2 gap-3 md:gap-6">
