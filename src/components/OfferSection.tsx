@@ -39,7 +39,7 @@ export const OfferSection: React.FC = () => {
               <p className="text-slate-500 mb-6 text-center font-medium">O essencial para iniciar a alfabetização</p>
               
               <div className="space-y-1 mb-8 text-center">
-                <p className="text-[var(--color-action)] font-bold text-lg line-through opacity-80">De R$ 47,90</p>
+                <p className="text-[var(--color-action)] font-bold text-lg line-through opacity-80">De R$ 37,90</p>
                 <p className="text-slate-700 text-lg font-bold">Por Apenas:</p>
                 <p className="text-[var(--color-cta)] font-display font-black text-5xl mb-2">R$ 9,90</p>
               </div>
@@ -80,9 +80,9 @@ export const OfferSection: React.FC = () => {
               <p className="text-slate-500 mb-6 text-center font-medium">Kit Completo + Todos os Bônus</p>
               
               <div className="space-y-1 mb-8 text-center">
-                <p className="text-[var(--color-action)] font-bold text-lg line-through opacity-80">De R$ 67,00</p>
+                <p className="text-[var(--color-action)] font-bold text-lg line-through opacity-80">De R$ 57,90</p>
                 <p className="text-slate-700 text-lg font-bold">Por Apenas:</p>
-                <p className="text-[var(--color-primary)] font-display font-black text-6xl mb-2">R$ 27,90</p>
+                <p className="text-[var(--color-primary)] font-display font-black text-6xl mb-2">R$ 19,90</p>
               </div>
 
               <div className="w-full space-y-3 mb-8 text-left flex-1">
