@@ -5,7 +5,7 @@ import React from "react";
  * Substitua as URLs abaixo pelos links dos seus checkouts de pagamento (ex: Kiwify, Hotmart, Eduzz, Kirvano, etc.)
  */
 export const CHECKOUT_URL_BASIC = "https://pay.wiapy.com/6a97631370d6d30424e366b4";
-export const CHECKOUT_URL_PREMIUM = "https://pay.wiapy.com/6a97631370d6d30424e366b4";
+export const CHECKOUT_URL_PREMIUM = "https://pay.wiapy.com/NMkKqKFFqzBp";
 
 export const PRODUCT_INFO = {
   name: "KIT DE ALFABETIZAÇÃO Ler & Brincar",
@@ -152,7 +152,7 @@ export const buildCheckoutUrlWithTracking = (baseUrl: string): string => {
 export const handleCheckoutClick = (plan: "basic" | "premium" = "premium", e?: React.MouseEvent) => {
   const targetUrl = plan === "premium" ? CHECKOUT_URL_PREMIUM : CHECKOUT_URL_BASIC;
   const selectedPlan = plan === "premium" ? PLANS.premium : PLANS.basic;
-  const numericPrice = 9.90;
+  const numericPrice = plan === "premium" ? 27.90 : 9.90;
 
   // 1. Disparo do Evento InitiateCheckout (Pixel + CAPI)
   const eventData = {
