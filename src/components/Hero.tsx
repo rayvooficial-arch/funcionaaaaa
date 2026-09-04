@@ -10,11 +10,11 @@ export const Hero: React.FC = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-800 leading-[1.1] mb-4 tracking-tight">
-            Seu filho lendo <span className="text-[var(--color-primary)]">sem travar</span>, com apenas 10 minutinhos por dia
+            +400 Atividades de Grafismo Fonético <span className="text-[var(--color-primary)]">prontas e organizadas</span>
           </h1>
           
           <p className="text-base md:text-xl text-slate-700 mb-6 max-w-lg md:max-w-2xl mx-auto font-medium leading-snug">
-            +400 atividades de grafismo fonético, prontas e organizadas — mesmo que ele tenha dificuldade hoje
+            Ajude a criança a ler de forma rapida e divertida, mesmo que tenha dificuldade hoje
           </p>
 
           <div className="mb-8 max-w-2xl mx-auto">
