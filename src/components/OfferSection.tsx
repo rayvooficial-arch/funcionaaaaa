@@ -6,7 +6,7 @@ import imagemPacoteCompleto from "../assets/images/1a2407bd-2c68-409c-ab80-18ec2
 export const OfferSection: React.FC = () => {
   const commonFeatures = [
     { text: "+400 Atividades de Grafismo Fonético", included: true },
-    { text: "+200 Atividades Extras de Alfabetização", included: false },
+    { text: "+200 Atividades Extras de Alfabetização", included: true },
     { text: "App para apoio", included: false },
     { text: "Leitura progressiva por sílabas", included: false },
     { text: "Jogo da Memória das Sílabas", included: false },
@@ -28,7 +28,7 @@ export const OfferSection: React.FC = () => {
     <section id="oferta" className="py-12 relative overflow-hidden bg-slate-50">
       <div className="max-w-5xl mx-auto px-4 relative z-10">
         <h2 className="text-3xl md:text-4xl mb-10 font-bold text-slate-800 tracking-tight text-center">
-          +400 Atividades de Grafismo Fonético <span className="text-[var(--color-primary)]">+ 4 Bônus Exclusivos</span>
+          Escolha o melhor plano para seu filho.
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
@@ -54,7 +54,7 @@ export const OfferSection: React.FC = () => {
                         <X className="w-4 h-4 text-red-500 stroke-[3]" />
                       )}
                     </div>
-                    <span className={`font-bold text-sm md:text-base tracking-tight leading-snug ${!feat.included ? 'text-slate-400 line-through decoration-red-400 decoration-2' : 'text-slate-800'}`}>
+                    <span className={`font-bold text-sm md:text-base tracking-tight leading-snug ${!feat.included ? 'text-slate-400' : 'text-slate-800'}`}>
                       {feat.text}
                     </span>
                   </div>

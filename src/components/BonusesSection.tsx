@@ -20,24 +20,23 @@ export const BonusesSection: React.FC = () => {
           E ainda você recebe <span className="text-[var(--color-primary)]">4 Bônus Grátis:</span>
         </h2>
         
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-2 gap-3 md:gap-6">
           {bonuses.map((bonus, idx) => (
-            <div key={idx} className="bg-white rounded-[24px] border-2 border-[var(--color-primary)]/20 relative shadow-sm overflow-hidden flex flex-col group hover:border-[var(--color-primary)]/50 transition-colors">
-              <div className="absolute top-4 right-4 bg-[var(--color-primary)] text-white px-4 py-1.5 rounded-full text-xs font-black uppercase shadow-sm z-10">Bônus</div>
+            <div key={idx} className="bg-white rounded-2xl md:rounded-[24px] border-2 border-[var(--color-primary)]/20 relative shadow-sm overflow-hidden flex flex-col group hover:border-[var(--color-primary)]/50 transition-colors">
+              <div className="absolute top-2 right-2 md:top-4 md:right-4 bg-[var(--color-primary)] text-white px-2 py-1 md:px-4 md:py-1.5 rounded-full text-[10px] md:text-xs font-black uppercase shadow-sm z-10">Bônus</div>
               
-              <div className="w-full p-6 flex justify-center items-center relative overflow-hidden group-hover:bg-slate-50 transition-colors">
+              <div className="w-full p-3 md:p-6 flex justify-center items-center relative overflow-hidden group-hover:bg-slate-50 transition-colors">
                 <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <img src={bonus.img} alt={bonus.title} className="h-48 md:h-56 object-contain drop-shadow-xl relative z-10 group-hover:scale-105 transition-transform duration-500 mix-blend-multiply" />
+                <img src={bonus.img} alt={bonus.title} className="h-24 md:h-56 object-contain drop-shadow-xl relative z-10 group-hover:scale-105 transition-transform duration-500 mix-blend-multiply" />
               </div>
-
-              <div className="p-6 md:p-8 pt-4 flex-grow flex flex-col">
-                <div className="flex items-start gap-3 mb-3">
-                  <h3 className="text-xl font-bold text-slate-800 leading-snug">{bonus.title}</h3>
+              <div className="p-4 md:p-8 md:pt-4 flex-grow flex flex-col">
+                <div className="flex items-start gap-3 mb-2 md:mb-3">
+                  <h3 className="text-sm md:text-xl font-bold text-slate-800 leading-snug">{bonus.title}</h3>
                 </div>
-                <p className="text-slate-600 mb-6 text-[15px] font-medium leading-relaxed flex-grow">{bonus.desc}</p>
-                <div className="flex justify-between items-center border-t border-slate-100 pt-4 mt-auto">
-                  <span className="text-slate-400 line-through text-sm font-bold">Valor Total: {bonus.price}</span>
-                  <span className="text-[var(--color-primary)] font-black text-lg">Hoje: R$ 0,00</span>
+                <p className="text-slate-600 mb-4 md:mb-6 text-xs md:text-[15px] font-medium leading-relaxed flex-grow line-clamp-3 md:line-clamp-none">{bonus.desc}</p>
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-t border-slate-100 pt-3 md:pt-4 mt-auto gap-1 md:gap-0">
+                  <span className="text-slate-400 line-through text-[10px] md:text-sm font-bold">Valor: {bonus.price}</span>
+                  <span className="text-[var(--color-primary)] font-black text-xs md:text-lg">Hoje: R$ 0,00</span>
                 </div>
               </div>
             </div>

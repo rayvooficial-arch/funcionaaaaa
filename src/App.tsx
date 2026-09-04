@@ -31,9 +31,9 @@ export default function App() {
         <BenefitsSection />
         <SampleCarousel />
         <MaterialShowcase />
-        <Testimonials />
         <BonusesSection />
         <OfferSection />
+        <Testimonials />
         <Guarantee />
         <FAQSection />
         <FinalCTA />
