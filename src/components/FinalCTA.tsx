@@ -3,7 +3,7 @@ import { handleCheckoutClick } from "../config";
 
 export const FinalCTA: React.FC = () => {
   return (
-    <section className="py-16 bg-slate-50 relative overflow-hidden">
+    <section className="py-16 relative overflow-hidden">
       <div className="max-w-4xl mx-auto text-center px-4 relative z-10">
         <h2 className="text-3xl md:text-5xl font-display font-bold text-slate-800 leading-[1.1] mb-8 tracking-tight">
           Comece a evolução na leitura <span className="text-[var(--color-primary)]">hoje mesmo!</span>

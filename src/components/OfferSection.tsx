@@ -5,7 +5,7 @@ import imagemPacoteCompleto from "../assets/images/1a2407bd-2c68-409c-ab80-18ec2
 
 export const OfferSection: React.FC = () => {
   return (
-    <section id="oferta" className="py-12 bg-slate-50 relative overflow-hidden">
+    <section id="oferta" className="py-12 relative overflow-hidden">
       <div className="max-w-3xl mx-auto text-center px-4 relative z-10">
         <h2 className="text-3xl md:text-4xl mb-10 font-bold text-slate-800 tracking-tight">
           +400 Atividades de Grafismo Fonético <span className="text-[var(--color-primary)]">+ 4 Bônus Exclusivos</span>

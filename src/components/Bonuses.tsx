@@ -5,11 +5,9 @@ import { StarSpark } from "./BrandDoodles";
 
 export const Bonuses: React.FC = () => {
   return (
-    <section id="bonus" className="py-16 sm:py-24 bg-gradient-to-b from-[var(--color-bg-page)] via-[var(--color-bg-warm)] to-[var(--color-bg-page)] border-b border-[var(--color-border)] relative overflow-hidden">
+    <section id="bonus" className="py-16 sm:py-24 border-b border-[var(--color-border)] relative overflow-hidden">
       
       {/* Background festive glow */}
-      <div className="absolute top-1/3 right-0 w-80 h-80 bg-[var(--color-yellow)]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 left-0 w-80 h-80 bg-[var(--color-cta)]/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
         

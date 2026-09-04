@@ -24,7 +24,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="flex min-h-screen flex-col bg-[var(--color-bg-page)] text-[var(--color-text-body)] selection:bg-[var(--color-primary)]/20 selection:text-[var(--color-primary)]">
+    <div className="flex min-h-screen flex-col bg-[#FFFBFA] text-[var(--color-text-body)] selection:bg-[var(--color-primary)]/20 selection:text-[var(--color-primary)]">
       <TopBanner />
       <main className="flex-grow">
         <Hero />

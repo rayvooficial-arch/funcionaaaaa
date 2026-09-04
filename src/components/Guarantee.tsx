@@ -3,9 +3,9 @@ import { ShieldCheck } from "lucide-react";
 
 export const Guarantee: React.FC = () => {
   return (
-    <section className="py-12 bg-slate-50 relative overflow-hidden">
+    <section className="py-12 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-xl mx-auto bg-white text-slate-800 rounded-[40px] p-8 md:p-12 text-center shadow-lg border border-[var(--color-primary)]/20">
+        <div className="max-w-xl mx-auto text-slate-800 rounded-[40px] p-8 md:p-12 text-center shadow-lg border border-[var(--color-primary)]/20">
           <h3 className="text-2xl md:text-3xl font-display font-bold mb-6 leading-tight tracking-normal text-slate-800">
             Garantia de <span className="text-[var(--color-primary)]">7 dias</span>
           </h3>

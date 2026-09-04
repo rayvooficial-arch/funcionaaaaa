@@ -13,9 +13,7 @@ export const BonusesSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white bg-gradient-to-b from-[#55F7DB]/5 from-60% to-[#F75571]/5 pt-12 pb-12">
-      <div className="absolute top-10 right-10 w-64 h-64 bg-[var(--color-primary)]/5 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-80 h-80 bg-[var(--color-yellow)]/5 rounded-full blur-[100px] pointer-events-none" />
+    <section className="relative overflow-hidden pt-12 pb-12">
 
       <div className="max-w-5xl mx-auto px-4 relative z-10">
         <h2 className="text-3xl md:text-4xl text-center mb-10 font-bold text-slate-800 tracking-tight">
@@ -27,7 +25,7 @@ export const BonusesSection: React.FC = () => {
             <div key={idx} className="bg-white rounded-[24px] border-2 border-[var(--color-primary)]/20 relative shadow-sm overflow-hidden flex flex-col group hover:border-[var(--color-primary)]/50 transition-colors">
               <div className="absolute top-4 right-4 bg-[var(--color-primary)] text-white px-4 py-1.5 rounded-full text-xs font-black uppercase shadow-sm z-10">Bônus</div>
               
-              <div className="w-full bg-white p-6 flex justify-center items-center relative overflow-hidden group-hover:bg-slate-50 transition-colors">
+              <div className="w-full p-6 flex justify-center items-center relative overflow-hidden group-hover:bg-slate-50 transition-colors">
                 <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 <img src={bonus.img} alt={bonus.title} className="h-48 md:h-56 object-contain drop-shadow-xl relative z-10 group-hover:scale-105 transition-transform duration-500 mix-blend-multiply" />
               </div>

@@ -34,7 +34,7 @@ export const ProductMockup: React.FC<ProductMockupProps> = ({ size = "large", cl
           {/* Caderno 1 */}
           <div className="group relative bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white p-3 sm:p-4 rounded-2xl shadow-md transform hover:-translate-y-1 transition-all flex flex-col justify-between aspect-[3/4] border border-white/30">
             <div className="flex justify-between items-start">
-              <span className="text-[10px] font-extrabold bg-white/25 px-2 py-0.5 rounded-md backdrop-blur-xs">
+              <span className="text-[10px] font-extrabold/25 px-2 py-0.5 rounded-md backdrop-blur-xs">
                 VOL. 01
               </span>
               <span className="text-lg">🔤</span>
@@ -54,7 +54,7 @@ export const ProductMockup: React.FC<ProductMockupProps> = ({ size = "large", cl
           {/* Caderno 2 */}
           <div className="group relative bg-gradient-to-br from-[var(--color-primary-light)] to-[var(--color-primary-dark)] text-white p-3 sm:p-4 rounded-2xl shadow-md transform hover:-translate-y-1 transition-all flex flex-col justify-between aspect-[3/4] border border-white/30">
             <div className="flex justify-between items-start">
-              <span className="text-[10px] font-extrabold bg-white/25 px-2 py-0.5 rounded-md backdrop-blur-xs">
+              <span className="text-[10px] font-extrabold/25 px-2 py-0.5 rounded-md backdrop-blur-xs">
                 VOL. 02
               </span>
               <span className="text-lg">🎨</span>
@@ -74,7 +74,7 @@ export const ProductMockup: React.FC<ProductMockupProps> = ({ size = "large", cl
           {/* Caderno 3 */}
           <div className="group relative bg-gradient-to-br from-[var(--color-pink)] to-[var(--color-pink-dark)] text-white p-3 sm:p-4 rounded-2xl shadow-md transform hover:-translate-y-1 transition-all flex flex-col justify-between aspect-[3/4] border border-white/30">
             <div className="flex justify-between items-start">
-              <span className="text-[10px] font-extrabold bg-white/25 px-2 py-0.5 rounded-md backdrop-blur-xs">
+              <span className="text-[10px] font-extrabold/25 px-2 py-0.5 rounded-md backdrop-blur-xs">
                 VOL. 03
               </span>
               <span className="text-lg">🧩</span>
@@ -114,7 +114,7 @@ export const ProductMockup: React.FC<ProductMockupProps> = ({ size = "large", cl
           {/* Caderno 5 */}
           <div className="group relative bg-gradient-to-br from-[var(--color-success)] to-[var(--color-success-dark)] text-white p-3 sm:p-4 rounded-2xl shadow-md transform hover:-translate-y-1 transition-all flex flex-col justify-between aspect-[3/4] border border-white/30">
             <div className="flex justify-between items-start">
-              <span className="text-[10px] font-extrabold bg-white/25 px-2 py-0.5 rounded-md backdrop-blur-xs">
+              <span className="text-[10px] font-extrabold/25 px-2 py-0.5 rounded-md backdrop-blur-xs">
                 VOL. 05
               </span>
               <span className="text-lg">⭐</span>
@@ -134,7 +134,7 @@ export const ProductMockup: React.FC<ProductMockupProps> = ({ size = "large", cl
           {/* Caderno 6 */}
           <div className="group relative bg-gradient-to-br from-[var(--color-cta)] to-[var(--color-cta-dark)] text-white p-3 sm:p-4 rounded-2xl shadow-md transform hover:-translate-y-1 transition-all flex flex-col justify-between aspect-[3/4] border border-white/30">
             <div className="flex justify-between items-start">
-              <span className="text-[10px] font-extrabold bg-white/25 px-2 py-0.5 rounded-md backdrop-blur-xs">
+              <span className="text-[10px] font-extrabold/25 px-2 py-0.5 rounded-md backdrop-blur-xs">
                 VOL. 06
               </span>
               <span className="text-lg">🏆</span>

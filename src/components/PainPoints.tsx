@@ -51,11 +51,9 @@ export const PainPoints: React.FC = () => {
   };
 
   return (
-    <section id="identificacao" className="py-14 sm:py-20 bg-gradient-to-b from-[var(--color-bg-page)] via-[var(--color-pink-light)] to-[var(--color-bg-warm)] relative overflow-hidden border-t border-[var(--color-border)]">
+    <section id="identificacao" className="py-14 sm:py-20 relative overflow-hidden border-t border-[var(--color-border)]">
       
       {/* Soft Ambient Background Glows */}
-      <div className="absolute top-10 right-0 w-80 h-80 bg-[var(--color-pink-dark)]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 left-0 w-80 h-80 bg-[var(--color-yellow)]/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
         
@@ -76,7 +74,6 @@ export const PainPoints: React.FC = () => {
           </h2>
           
           {/* Subtle Decorative Ambient Blur */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg h-[150%] blur-3xl bg-white/40 -z-0 pointer-events-none rounded-full" />
         </div>
 
         {/* Carousel Header & Controls */}

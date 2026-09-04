@@ -20,9 +20,7 @@ export const SampleCarousel: React.FC = () => {
   const duplicatedImages = [...images, ...images];
 
   return (
-    <section className="relative overflow-hidden bg-white bg-gradient-to-b from-[#55F7DB]/5 from-60% to-[#F75571]/5 pt-12 pb-12 border-t border-slate-100">
-      <div className="absolute top-10 left-10 w-64 h-64 bg-[var(--color-primary)]/5 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-80 h-80 bg-[var(--color-yellow)]/5 rounded-full blur-[100px] pointer-events-none" />
+    <section className="relative overflow-hidden pt-12 pb-12 border-t border-slate-100">
 
       <style>{`
         @keyframes scroll-left {
@@ -48,7 +46,7 @@ export const SampleCarousel: React.FC = () => {
             {duplicatedImages.map((item, index) => (
               <div 
                 key={`${item.id}-${index}`} 
-                className="flex-none w-[280px] md:w-[320px] bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden"
+                className="flex-none w-[280px] md:w-[320px] rounded-2xl shadow-sm border border-slate-200 overflow-hidden"
               >
                 <img 
                   src={item.src} 

@@ -12,10 +12,9 @@ export const HowItWorks: React.FC = () => {
   };
 
   return (
-    <section id="como-funciona" className="py-16 sm:py-24 bg-gradient-to-b from-[var(--color-bg-page)] via-[var(--color-bg-alt)] to-[var(--color-bg-page)] border-b border-[var(--color-border)] relative overflow-hidden">
+    <section id="como-funciona" className="py-16 sm:py-24 border-b border-[var(--color-border)] relative overflow-hidden">
       
       {/* Background accents */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-72 bg-[var(--color-primary)]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
         
