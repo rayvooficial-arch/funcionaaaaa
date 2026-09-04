@@ -5,7 +5,7 @@ export const BenefitsSection: React.FC = () => {
   const benefits = [
     { icon: CheckCircle2, title: "+400 Atividades de Grafismo Fonético" },
     { icon: PlusCircle, title: "+200 Atividades Extras de Alfabetização" },
-    { icon: Smartphone, title: "App de Apoio com Leitura Progressiva" },
+    { icon: Smartphone, title: "Guia online de aplicação" },
     { icon: Gamepad2, title: "Jogo da Memória das Sílabas" },
     { icon: ShieldCheck, title: "Garantia Incondicional de 7 dias" },
     { icon: InfinityIcon, title: "Acesso Imediato e Vitalício" }

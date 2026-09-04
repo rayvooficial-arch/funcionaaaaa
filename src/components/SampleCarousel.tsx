@@ -51,6 +51,8 @@ export const SampleCarousel: React.FC = () => {
                 <img 
                   src={item.src} 
                   alt={`Amostra ${item.id}`} 
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto block pointer-events-none"
                 />
               </div>

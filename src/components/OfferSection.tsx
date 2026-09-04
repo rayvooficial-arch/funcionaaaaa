@@ -7,7 +7,7 @@ export const OfferSection: React.FC = () => {
   const commonFeatures = [
     { text: "+400 Atividades de Grafismo Fonético", included: true },
     { text: "+200 Atividades Extras de Alfabetização", included: true },
-    { text: "App para apoio", included: false },
+    { text: "Guia online de aplicação", included: false },
     { text: "Leitura progressiva por sílabas", included: false },
     { text: "Jogo da Memória das Sílabas", included: false },
     { text: "Garantia de 7 dias", included: true },
@@ -17,7 +17,7 @@ export const OfferSection: React.FC = () => {
   const premiumFeatures = [
     { text: "+400 Atividades de Grafismo Fonético", included: true },
     { text: "+200 Atividades Extras de Alfabetização", included: true },
-    { text: "App para apoio", included: true },
+    { text: "Guia online de aplicação", included: true },
     { text: "Leitura progressiva por sílabas", included: true },
     { text: "Jogo da Memória das Sílabas", included: true },
     { text: "Garantia de 7 dias", included: true },
@@ -107,7 +107,7 @@ export const OfferSection: React.FC = () => {
           <p className="text-slate-600 font-bold text-sm mb-2 flex items-center justify-center gap-2">
             <ShieldCheck className="w-5 h-5 text-[var(--color-success)]" /> Compra 100% Segura e Protegida
           </p>
-          <p className="text-slate-500 text-xs font-medium">Após a compra, você recebe acesso ao Material em PDF diretamente no seu E-mail</p>
+          <p className="text-slate-500 text-xs font-medium">Após a compra, você recebe acesso imediato ao Material no seu E-mail</p>
         </div>
       </div>
     </section>

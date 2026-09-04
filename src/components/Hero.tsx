@@ -14,7 +14,7 @@ export const Hero: React.FC = () => {
           </h1>
           
           <p className="text-base md:text-xl text-slate-700 mb-6 max-w-lg md:max-w-2xl mx-auto font-medium leading-snug">
-            Ajude a criança a ler de forma rapida e divertida, mesmo que tenha dificuldade hoje
+            Ajude a criança a ler de forma rápida e divertida, mesmo que tenha dificuldade hoje
           </p>
 
           <div className="mb-8 max-w-2xl mx-auto">

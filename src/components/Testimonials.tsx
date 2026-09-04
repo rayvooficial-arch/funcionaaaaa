@@ -41,6 +41,8 @@ export const Testimonials: React.FC = () => {
                 key={idx}
                 src={img} 
                 alt={`Avaliação ${idx + 1}`} 
+                loading="lazy"
+                decoding="async"
                 className={`w-full h-auto object-contain transition-opacity duration-500 ${idx === currentIndex ? "relative opacity-100 z-10" : "absolute top-0 left-0 opacity-0 z-0"}`}
               />
             ))}

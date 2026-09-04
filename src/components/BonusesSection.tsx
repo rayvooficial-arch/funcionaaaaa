@@ -7,7 +7,7 @@ import bonus4 from "../assets/images/bonus_4_guia_online_1788305102177.jpg";
 export const BonusesSection: React.FC = () => {
   const bonuses = [
     { title: "+200 Atividades Extras de Alfabetização", desc: "Material complementar para reforçar ainda mais o aprendizado da criança com novas atividades práticas, simples e muito eficazes!", price: "R$ 47,00", img: bonus1 },
-    { title: "Treino Progressivo de Leitura por Sílabas", desc: "Atividades progressivas por sílabas que ajudam a criança a evoluir na leitura de forma leve e natural!", price: "R$ 27,00", img: bonus2 },
+    { title: "Leitura progressiva por sílabas", desc: "Atividades progressivas por sílabas que ajudam a criança a evoluir na leitura de forma leve e natural!", price: "R$ 27,00", img: bonus2 },
     { title: "Jogo da Memória das Sílabas", desc: "Material pronto que transforma o aprendizado das sílabas em uma brincadeira educativa, ajudando a fixar sons e palavras!", price: "R$ 27,00", img: bonus3 },
     { title: "Guia Online de Aplicação Passo a Passo", desc: "Aprenda como aplicar corretamente todas as atividades, mesmo sem experiência, e evite qualquer dúvida durante o processo!", price: "R$ 19,90", img: bonus4 }
   ];
@@ -27,7 +27,7 @@ export const BonusesSection: React.FC = () => {
               
               <div className="w-full p-3 md:p-6 flex justify-center items-center relative overflow-hidden group-hover:bg-slate-50 transition-colors">
                 <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <img src={bonus.img} alt={bonus.title} className="h-24 md:h-56 object-contain drop-shadow-xl relative z-10 group-hover:scale-105 transition-transform duration-500 mix-blend-multiply" />
+                <img src={bonus.img} alt={bonus.title} loading="lazy" decoding="async" className="h-24 md:h-56 object-contain drop-shadow-xl relative z-10 group-hover:scale-105 transition-transform duration-500 mix-blend-multiply" />
               </div>
               <div className="p-4 md:p-8 md:pt-4 flex-grow flex flex-col">
                 <div className="flex items-start gap-3 mb-2 md:mb-3">
