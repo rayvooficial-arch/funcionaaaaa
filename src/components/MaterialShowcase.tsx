@@ -66,7 +66,7 @@ export const MaterialShowcase: React.FC = () => {
         <div className="relative w-fit max-w-full mx-auto rounded-[32px] overflow-hidden shadow-2xl border-4 border-slate-50 bg-black flex items-center justify-center">
           <video 
             ref={videoRef}
-            src="/novo-video.mp4"
+            src="/grafismo.mp4"
             className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto"
             controls={!showUnmuteOverlay}
             loop
