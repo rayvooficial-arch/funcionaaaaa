@@ -41,7 +41,7 @@ export const OfferSection: React.FC = () => {
               <div className="space-y-1 mb-8 text-center">
                 <p className="text-[var(--color-action)] font-bold text-lg line-through opacity-80">De R$ 47,90</p>
                 <p className="text-slate-700 text-lg font-bold">Por Apenas:</p>
-                <p className="text-slate-800 font-display font-black text-5xl mb-2">R$ 9,90</p>
+                <p className="text-[var(--color-cta)] font-display font-black text-5xl mb-2">R$ 9,90</p>
               </div>
 
               <div className="w-full space-y-3 mb-8 text-left flex-1">
@@ -61,7 +61,7 @@ export const OfferSection: React.FC = () => {
                 ))}
               </div>
 
-              <button onClick={(e) => handleCheckoutClick("basic", e)} className="w-full bg-slate-800 hover:bg-slate-700 text-white py-5 rounded-2xl text-xl font-bold transition-all flex items-center justify-center gap-3 shadow-lg cursor-pointer">
+              <button onClick={(e) => handleCheckoutClick("basic", e)} className="w-full bg-[var(--color-cta)] hover:opacity-90 text-white py-5 rounded-2xl text-xl font-bold transition-all flex items-center justify-center gap-3 shadow-lg shadow-[var(--color-cta)]/30 cursor-pointer">
                 COMPRAR AGORA
               </button>
             </div>
@@ -96,7 +96,7 @@ export const OfferSection: React.FC = () => {
                 ))}
               </div>
 
-              <button onClick={(e) => handleCheckoutClick("premium", e)} id="offer-buy-button" className="w-full bg-[var(--color-cta)] hover:opacity-90 text-[var(--color-on-action)] py-5 rounded-2xl text-xl font-bold transition-all flex items-center justify-center gap-3 shadow-xl shadow-[var(--color-cta)]/30 animate-cta-pulse cursor-pointer">
+              <button onClick={(e) => handleCheckoutClick("premium", e)} id="offer-buy-button" className="w-full bg-[var(--color-primary)] hover:opacity-90 text-[var(--color-on-action)] py-5 rounded-2xl text-xl font-bold transition-all flex items-center justify-center gap-3 shadow-xl shadow-[var(--color-primary)]/30 animate-cta-pulse cursor-pointer">
                 COMPRAR AGORA
               </button>
             </div>
