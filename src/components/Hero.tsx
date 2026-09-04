@@ -22,7 +22,7 @@ export const Hero: React.FC = () => {
           </div>
 
           <button onClick={(e) => scrollToOffer(e)} id="hero-cta-button" className="bg-[var(--color-cta)] text-[var(--color-on-action)] hover:opacity-90 px-10 py-5 rounded-full text-xl md:text-2xl font-bold transition-all flex items-center justify-center gap-3 mx-auto cursor-pointer shadow-xl shadow-[var(--color-cta)]/30 animate-cta-pulse w-full md:w-auto">
-            👉 Quero as atividades
+            Quero as atividades
           </button>
 
           <div className="mt-8 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-slate-700 font-bold text-sm md:text-base px-4">

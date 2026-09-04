@@ -37,7 +37,7 @@ export const OfferSection: React.FC = () => {
               ))}
             </div>
             <button onClick={(e) => handleCheckoutClick("premium", e)} id="offer-buy-button" className="w-full md:max-w-md bg-[var(--color-cta)] hover:opacity-90 text-[var(--color-on-action)] py-5 rounded-2xl text-xl font-bold transition-all flex items-center justify-center gap-3 shadow-xl shadow-[var(--color-cta)]/30 animate-cta-pulse cursor-pointer">
-              👉 Comprar Agora
+              Comprar Agora
             </button>
             <div className="mt-4 text-center">
               <p className="text-slate-600 font-bold text-sm mb-2 flex items-center justify-center gap-2">
