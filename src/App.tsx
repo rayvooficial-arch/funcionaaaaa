@@ -3,11 +3,10 @@ import { trackEvent } from "./config";
 import { TopBanner } from "./components/TopBanner";
 import { Hero } from "./components/Hero";
 import { BenefitsSection } from "./components/BenefitsSection";
-import { SampleCarousel } from "./components/SampleCarousel";
 import { MaterialShowcase } from "./components/MaterialShowcase";
-import { Testimonials } from "./components/Testimonials";
 import { BonusesSection } from "./components/BonusesSection";
 import { OfferSection } from "./components/OfferSection";
+import { Testimonials } from "./components/Testimonials";
 import { Guarantee } from "./components/Guarantee";
 import { FAQSection } from "./components/FAQSection";
 import { FinalCTA } from "./components/FinalCTA";
@@ -24,12 +23,11 @@ export default function App() {
   }, []);
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#FFFBFA] text-[var(--color-text-body)] selection:bg-[var(--color-primary)]/20 selection:text-[var(--color-primary)]">
+    <div className="flex min-h-screen flex-col bg-[var(--color-bg-page)] text-[var(--color-text-body)] selection:bg-[var(--color-primary)]/20 selection:text-[var(--color-primary)]">
       <TopBanner />
       <main className="flex-grow">
         <Hero />
         <BenefitsSection />
-        <SampleCarousel />
         <MaterialShowcase />
         <BonusesSection />
         <OfferSection />

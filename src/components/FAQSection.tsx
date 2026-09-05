@@ -12,7 +12,7 @@ export const FAQSection: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-12">
+    <section className="py-12 bg-white">
       <div className="max-w-3xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl text-center mb-10 font-bold text-slate-800 tracking-tight">
           Dúvidas <span className="text-[var(--color-primary)]">Frequentes</span>

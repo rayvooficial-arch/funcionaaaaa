@@ -27,7 +27,7 @@ export const Testimonials: React.FC = () => {
   }, []);
 
   return (
-    <section className="py-16 overflow-hidden">
+    <section className="py-16 bg-white overflow-hidden">
       <div className="max-w-5xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl text-center mb-10 font-bold text-slate-800 tracking-tight">
           VEJA OQUE <span className="text-[var(--color-primary)]">ESTÃO DIZENDO</span>
@@ -41,8 +41,6 @@ export const Testimonials: React.FC = () => {
                 key={idx}
                 src={img} 
                 alt={`Avaliação ${idx + 1}`} 
-                loading="lazy"
-                decoding="async"
                 className={`w-full h-auto object-contain transition-opacity duration-500 ${idx === currentIndex ? "relative opacity-100 z-10" : "absolute top-0 left-0 opacity-0 z-0"}`}
               />
             ))}
@@ -51,14 +49,14 @@ export const Testimonials: React.FC = () => {
           {/* Controls */}
           <button 
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 md:-translate-x-full md:-ml-4/90 hover:bg-white text-[var(--color-primary)] p-3 rounded-full shadow-lg z-20 transition-transform hover:scale-110"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 md:-translate-x-full md:-ml-4 bg-white/90 hover:bg-white text-[var(--color-primary)] p-3 rounded-full shadow-lg z-20 transition-transform hover:scale-110"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           
           <button 
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 md:translate-x-full md:-mr-4/90 hover:bg-white text-[var(--color-primary)] p-3 rounded-full shadow-lg z-20 transition-transform hover:scale-110"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 md:translate-x-full md:-mr-4 bg-white/90 hover:bg-white text-[var(--color-primary)] p-3 rounded-full shadow-lg z-20 transition-transform hover:scale-110"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
