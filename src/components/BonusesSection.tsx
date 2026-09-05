@@ -26,7 +26,7 @@ export const BonusesSection: React.FC = () => {
               
               <div className="w-full bg-white p-6 flex justify-center items-center relative overflow-hidden group-hover:bg-slate-50 transition-colors">
                 <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <img src={bonus.img} alt={bonus.title} className="h-48 md:h-56 object-contain drop-shadow-xl relative z-10 group-hover:scale-105 transition-transform duration-500 mix-blend-multiply" />
+                <img src={bonus.img} alt={bonus.title} loading="lazy" decoding="async" className="h-48 md:h-56 object-contain drop-shadow-xl relative z-10 group-hover:scale-105 transition-transform duration-500 mix-blend-multiply" />
               </div>
 
               <div className="p-6 md:p-8 pt-4 flex-grow flex flex-col">

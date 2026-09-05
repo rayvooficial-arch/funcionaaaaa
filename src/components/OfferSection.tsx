@@ -11,7 +11,7 @@ export const OfferSection: React.FC = () => {
           +400 Atividades de Grafismo Fonético <span className="text-[var(--color-primary)]">+ 4 Bônus Exclusivos</span>
         </h2>
         <div className="bg-white rounded-[32px] border-2 border-[var(--color-primary)] overflow-hidden shadow-lg relative max-w-2xl mx-auto">
-          <img src={imagemPacoteCompleto} alt="Kit Completo" className="w-full h-auto block max-h-[350px] object-cover" />
+          <img src={imagemPacoteCompleto} alt="Kit Completo" loading="lazy" decoding="async" className="w-full h-auto block max-h-[350px] object-cover" />
           <div className="p-6 md:p-8 pt-4 md:pt-4 flex flex-col items-center">
             <div className="space-y-1 mb-6 text-center">
               <p className="text-[var(--color-action)] font-bold text-lg line-through opacity-80">De R$ 67,00</p>
