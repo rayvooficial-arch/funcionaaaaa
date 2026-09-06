@@ -21,10 +21,10 @@ export const Testimonials: React.FC = () => {
   // Auto-play the carousel
   useEffect(() => {
     const timer = setInterval(() => {
-      nextSlide();
+      setCurrentIndex((prev) => (prev + 1) % images.length);
     }, 4000);
     return () => clearInterval(timer);
-  }, []);
+  }, [images.length]);
 
   return (
     <section className="py-16 bg-white overflow-hidden">

@@ -109,7 +109,7 @@ const hashData = (data: string | undefined | null) => {
 const sendMetaCAPIEvent = async (
   eventName: string,
   userData: { email?: string; phone?: string; clientIpAddress?: string; clientUserAgent?: string; fbp?: string; fbc?: string },
-  customData: any,
+  customData: Record<string, unknown>,
   eventId?: string
 ) => {
   const pixelId = process.env.META_PIXEL_ID || '1383508423908783';

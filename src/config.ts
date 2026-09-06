@@ -152,11 +152,11 @@ export const buildCheckoutUrlWithTracking = (baseUrl: string): string => {
 export const handleCheckoutClick = (plan: "basic" | "premium" = "premium", e?: React.MouseEvent) => {
   const targetUrl = plan === "premium" ? CHECKOUT_URL_PREMIUM : CHECKOUT_URL_BASIC;
   const selectedPlan = plan === "premium" ? PLANS.premium : PLANS.basic;
-  const numericPrice = 9.90;
+  const numericPrice = 18.90;
 
   // 1. Disparo dos Eventos InitiateCheckout e AddToCart (Pixel + CAPI)
   const eventData = {
-    content_name: "+400 Atividades de Grafismo Fonético",
+    content_name: "+130 Atividades de Grafismo Fonético",
     content_category: "Kit Alfabetizacao",
     value: numericPrice,
     currency: "BRL",

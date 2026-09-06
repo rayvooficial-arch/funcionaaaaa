@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { trackEvent } from "./config";
-import { TopBanner } from "./components/TopBanner";
 import { Hero } from "./components/Hero";
-import { BenefitsSection } from "./components/BenefitsSection";
-import { MaterialShowcase } from "./components/MaterialShowcase";
+import { ProblemSection } from "./components/ProblemSection";
+import { SolutionSection } from "./components/SolutionSection";
+import { ProductMockup } from "./components/ProductMockup";
+import { VideoSection } from "./components/VideoSection";
 import { BonusesSection } from "./components/BonusesSection";
-import { HowItWorks } from "./components/HowItWorks";
 import { OfferSection } from "./components/OfferSection";
 import { Testimonials } from "./components/Testimonials";
 import { Guarantee } from "./components/Guarantee";
@@ -25,13 +25,13 @@ export default function App() {
 
   return (
     <div className="flex min-h-screen flex-col bg-[var(--color-bg-page)] text-[var(--color-text-body)] selection:bg-[var(--color-primary)]/20 selection:text-[var(--color-primary)]">
-      <TopBanner />
       <main className="flex-grow">
         <Hero />
-        <BenefitsSection />
-        <MaterialShowcase />
+        <ProblemSection />
+        <SolutionSection />
+        <ProductMockup />
+        <VideoSection />
         <BonusesSection />
-        <HowItWorks />
         <OfferSection />
         <Testimonials />
         <Guarantee />
