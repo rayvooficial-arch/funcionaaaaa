@@ -5,6 +5,7 @@ import { Hero } from "./components/Hero";
 import { BenefitsSection } from "./components/BenefitsSection";
 import { MaterialShowcase } from "./components/MaterialShowcase";
 import { BonusesSection } from "./components/BonusesSection";
+import { HowItWorks } from "./components/HowItWorks";
 import { OfferSection } from "./components/OfferSection";
 import { Testimonials } from "./components/Testimonials";
 import { Guarantee } from "./components/Guarantee";
@@ -30,6 +31,7 @@ export default function App() {
         <BenefitsSection />
         <MaterialShowcase />
         <BonusesSection />
+        <HowItWorks />
         <OfferSection />
         <Testimonials />
         <Guarantee />
