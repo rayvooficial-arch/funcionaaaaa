@@ -35,7 +35,7 @@ export const ProductMockup: React.FC = () => {
     <section className="py-16 bg-white relative overflow-hidden">
       <div className="max-w-5xl mx-auto px-4">
         <h2 className="text-2xl md:text-3xl lg:text-4xl text-center mb-12 font-bold text-[#1E293B] tracking-tight">
-          Veja tudo que você vai receber no kit de atividades
+          Tudo o que você precisa para começar a trabalhar a alfabetização em casa.
         </h2>
         
         <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-8">

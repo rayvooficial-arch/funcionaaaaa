@@ -3,9 +3,9 @@ import { trackEvent } from "./config";
 import { Hero } from "./components/Hero";
 import { ProblemSection } from "./components/ProblemSection";
 import { SolutionSection } from "./components/SolutionSection";
+import { BenefitsSection } from "./components/BenefitsSection";
 import { ProductMockup } from "./components/ProductMockup";
 import { VideoSection } from "./components/VideoSection";
-import { BonusesSection } from "./components/BonusesSection";
 import { OfferSection } from "./components/OfferSection";
 import { Testimonials } from "./components/Testimonials";
 import { Guarantee } from "./components/Guarantee";
@@ -29,11 +29,11 @@ export default function App() {
         <Hero />
         <ProblemSection />
         <SolutionSection />
-        <ProductMockup />
+        <BenefitsSection />
         <VideoSection />
-        <BonusesSection />
-        <OfferSection />
+        <ProductMockup />
         <Testimonials />
+        <OfferSection />
         <Guarantee />
         <FAQSection />
         <FinalCTA />

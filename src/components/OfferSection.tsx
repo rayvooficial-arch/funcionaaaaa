@@ -5,11 +5,11 @@ import imagemPacoteCompleto from "../assets/images/1a2407bd-2c68-409c-ab80-18ec2
 
 export const OfferSection: React.FC = () => {
   const recapItems = [
-    { prefix: "Kit Atividades Grafismo Fonético", text: " ", price: "De R$ 97,00" },
-    { prefix: "Bônus 01:", text: " Caderno Extra de Alfabetização ", price: "De R$ 47,00" },
-    { prefix: "Bônus 02:", text: " Caderno Progressivo de Leitura ", price: "De R$ 27,00" },
-    { prefix: "Bônus 03:", text: " Caderno de Memória das Sílabas ", price: "De R$ 27,00" },
-    { prefix: "Bônus 04:", text: " Guia Online de Aplicação ", price: "De R$ 19,90" },
+    { prefix: "Kit Atividades Grafismo Fonético", text: " ", price: "De R$ 47,00" },
+    { prefix: "Bônus 01:", text: " Caderno Extra de Alfabetização ", price: "De R$ 15,00" },
+    { prefix: "Bônus 02:", text: " Caderno Progressivo de Leitura ", price: "De R$ 15,00" },
+    { prefix: "Bônus 03:", text: " Caderno de Memória das Sílabas ", price: "De R$ 10,00" },
+    { prefix: "Bônus 04:", text: " Guia Online de Aplicação ", price: "De R$ 10,00" },
     { prefix: "Suporte Profissional", text: "" },
     { prefix: "Garantia Incondicional", text: "" },
   ];
@@ -52,7 +52,7 @@ export const OfferSection: React.FC = () => {
 
           <div className="border-t border-slate-100 pt-8 mt-4 flex flex-col items-center">
             <div className="space-y-1 mb-6 text-center">
-              <p className="text-[#D4A045] font-bold text-xl line-through opacity-80">De R$ 39,90</p>
+              <p className="text-[#D4A045] font-bold text-xl line-through opacity-80">De R$ 97,00</p>
               <p className="text-slate-700 text-lg font-bold">Por Apenas:</p>
               <p className="text-[#4B9C49] font-black text-6xl md:text-7xl mb-2 tracking-tighter">R$ 18,90</p>
             </div>

@@ -11,18 +11,17 @@ export const Hero: React.FC = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
+          <div className="mb-8 max-w-2xl mx-auto">
+            <img src={heroImageAsset} alt="Mockup Ler e Brincar" fetchPriority="high" className="w-full h-auto object-contain mx-auto" />
+          </div>
           <h1 className="text-4xl md:text-6xl lg:text-[64px] font-display font-black text-slate-800 leading-[1.1] mb-6 tracking-tight">
             Existe uma <span className="text-[var(--color-primary)]">forma mais leve</span> de <span className="text-[var(--color-primary)]">ensinar seu filho a ler</span>…
           </h1>
           
           <div className="mb-10">
             <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed">
-              Descubra o método que transforma a alfabetização em uma experiência mais simples e divertida.
+              E ela começa antes de cobrar que a criança simplesmente leia.
             </p>
-          </div>
-
-          <div className="mb-12 max-w-2xl mx-auto">
-            <img src={heroImageAsset} alt="Mockup Ler e Brincar" fetchPriority="high" className="w-full h-auto object-contain rounded-2xl drop-shadow-xl mx-auto" />
           </div>
 
           <div className="flex flex-col items-center pb-8">

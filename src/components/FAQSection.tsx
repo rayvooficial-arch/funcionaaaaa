@@ -3,12 +3,14 @@ import { ChevronDown } from "lucide-react";
 
 export const FAQSection: React.FC = () => {
   const faqs = [
-    { q: "Funciona para crianças com dificuldade?", a: "Sim! O método foi desenvolvido justamente para ser passo a passo e no ritmo da criança, sendo ideal para quem tem dificuldades." },
-    { q: "Preciso saber ensinar?", a: "Não! Você recebe um Guia Online de Aplicação Passo a Passo que te mostra exatamente o que fazer." },
-    { q: "Quanto tempo por dia?", a: "Apenas 10 a 15 minutos por dia já são suficientes para ver uma grande evolução." },
-    { q: "O acesso é imediato?", a: "Sim! Assim que o pagamento for aprovado, você recebe todo o material no seu e-mail." },
-    { q: "É pagamento único?", a: "Sim! Você paga apenas uma vez e tem acesso vitalício ao material." }
+    { q: "Para qual idade o material é indicado?", a: "Para crianças a partir de 4 anos que estão iniciando o processo ou até 8 anos que ainda apresentam dificuldades." },
+    { q: "Meu filho ainda não sabe ler. Pode utilizar?", a: "Sim, o material foi criado exatamente para construir a base até a leitura." },
+    { q: "Precisa de algum material adicional?", a: "Não, todo o método está incluso no material. Você precisará apenas de lápis, borracha ou lápis de cor." },
+    { q: "Como recebo o material?", a: "O material é 100% digital. Você recebe o acesso no seu e-mail assim que o pagamento for aprovado." },
+    { q: "Posso imprimir?", a: "Sim, os materiais estão em formato PDF, prontos para serem impressos na sua casa ou em uma gráfica." },
+    { q: "É indicado para crianças que apresentam dificuldade na alfabetização?", a: "Com certeza. As atividades são lúdicas e visuais, respeitando o ritmo e ajudando quem tem dificuldade a ganhar confiança." }
   ];
+
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (

@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import img1 from "../assets/images/IMG-9547.jpg";
 import img2 from "../assets/images/IMG-9642.jpg";
-import img3 from "../assets/images/IMG-9643.jpg";
 import img4 from "../assets/images/IMG-9644.jpg";
 import img5 from "../assets/images/IMG-9645 (1).jpg";
+import whats1 from "../assets/images/whats1.png";
 
 export const Testimonials: React.FC = () => {
-  const images = [img1, img2, img3, img4, img5];
+  const images = [whats1, img1, img2, img4, img5];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
@@ -30,7 +30,7 @@ export const Testimonials: React.FC = () => {
     <section className="py-16 bg-white overflow-hidden">
       <div className="max-w-5xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl text-center mb-10 font-bold text-slate-800 tracking-tight">
-          VEJA OQUE <span className="text-[var(--color-primary)]">ESTÃO DIZENDO</span>
+          O que acontece quando você muda a <span className="text-[var(--color-primary)]">forma de ensinar</span>
         </h2>
         
         <div className="relative max-w-sm md:max-w-md mx-auto">

@@ -3,12 +3,16 @@ import { AlertCircle } from "lucide-react";
 
 export const ProblemSection: React.FC = () => {
   const problems = [
-    "A criança perde o interesse rapidamente.",
-    "Confunde letras ou sons.",
-    "Tem dificuldade para juntar sílabas.",
-    "A hora da atividade vira uma briga.",
-    "Fica frustrada quando não consegue acompanhar.",
-    "Começa a se comparar com outras crianças."
+    "A criança confunde letras;",
+    "Troca sons;",
+    "Tem dificuldade para juntar sílabas;",
+    "Esquece o que acabou de aprender;",
+    "Perde o interesse rapidamente;",
+    "Não quer fazer atividades;",
+    "Começa a ficar frustrada;",
+    "Chora ou se irrita durante o momento da alfabetização;",
+    "Evita livros e atividades;",
+    "Enquanto outras crianças parecem avançar mais rápido."
   ];
 
   return (
@@ -33,14 +37,19 @@ export const ProblemSection: React.FC = () => {
           </ul>
 
           <div className="space-y-6 text-slate-600 text-lg md:text-xl font-medium leading-relaxed border-t border-slate-100 pt-8">
-            <p className="text-slate-700 font-bold text-xl md:text-2xl">
-              E aos poucos, o que deveria ser uma descoberta começa a parecer uma obrigação.
+            <p className="text-slate-700 font-bold text-xl md:text-2xl text-center">
+              "Eu não consigo." <br className="hidden md:block"/> "Eu não sei." <br className="hidden md:block"/> "Eu não quero fazer."
             </p>
-            <p className="font-medium">
-              Mas isso não significa que seu filho não seja capaz de aprender.
+            <div className="bg-pink-50 rounded-2xl p-6 my-8 text-center border border-pink-100">
+              <p className="text-pink-600 font-black text-2xl md:text-3xl tracking-tight leading-tight">
+                Mas talvez o problema não seja falta de capacidade.
+              </p>
+            </div>
+            <p className="font-medium text-center">
+              Talvez a criança simplesmente ainda não tenha construído algumas das bases que tornam a leitura mais fácil de compreender.
             </p>
-            <p className="font-medium">
-              Muitas vezes, o que falta não é inteligência ou esforço. É uma forma de apresentar as primeiras etapas da leitura que <span className="text-[#4B9C49] font-bold">respeite o ritmo da criança</span> e transforme o aprendizado em pequenas descobertas.
+            <p className="font-bold text-center text-[#4B9C49] text-xl">
+              E isso muda completamente a forma de ensinar.
             </p>
           </div>
         </div>
