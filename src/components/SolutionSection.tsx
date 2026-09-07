@@ -86,7 +86,7 @@ export const SolutionSection: React.FC = () => {
         {/* SOLUÇÃO */}
         <div className="pt-8 border-t border-slate-100">
           <h2 className="text-3xl md:text-4xl font-black text-slate-800 mb-6 tracking-tight leading-tight">
-            Foi para tornar esse caminho mais simples que nasceu o <span className="text-[#4B9C49]">Ler & Brincar.</span>
+            Foi para tornar esse caminho mais simples que nasceu o <span className="text-[#15803D]">Ler & Brincar.</span>
           </h2>
           
           <p className="text-slate-600 font-medium mb-10 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">

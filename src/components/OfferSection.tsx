@@ -24,7 +24,7 @@ export const OfferSection: React.FC = () => {
         <div className="flex items-center justify-center mb-10">
           <div className="flex items-center gap-2">
             <div className="w-1.5 h-8 bg-[#D4A045] rounded-full"></div>
-            <span className="text-2xl md:text-3xl font-bold text-[#4B9C49]">
+            <span className="text-2xl md:text-3xl font-bold text-[#15803D]">
               Kit Atividades Grafismo Fonético
             </span>
           </div>
@@ -36,7 +36,7 @@ export const OfferSection: React.FC = () => {
           <div className="w-full max-w-xl mx-auto space-y-4 mb-10 text-left">
             {recapItems.map((item, idx) => (
               <div key={idx} className="flex items-center gap-3">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#4B9C49] flex items-center justify-center shadow-sm">
+                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#15803D] flex items-center justify-center shadow-sm">
                   <Check className="w-4 h-4 text-white stroke-[3]" />
                 </div>
                 <div className="text-[15px] md:text-[17px] text-slate-700 leading-snug">
@@ -54,7 +54,7 @@ export const OfferSection: React.FC = () => {
             <div className="space-y-1 mb-6 text-center">
               <p className="text-[#D4A045] font-bold text-xl line-through opacity-80">De R$ 97,00</p>
               <p className="text-slate-700 text-lg font-bold">Por Apenas:</p>
-              <p className="text-[#4B9C49] font-black text-6xl md:text-7xl mb-2 tracking-tighter">R$ 18,90</p>
+              <p className="text-[#15803D] font-black text-6xl md:text-7xl mb-2 tracking-tighter">R$ 18,90</p>
             </div>
             
             <button onClick={(e) => handleCheckoutClick("premium", e)} id="offer-buy-button" className="w-full md:max-w-md bg-[var(--color-cta)] hover:opacity-90 text-[var(--color-on-action)] py-5 rounded-2xl text-xl font-bold transition-all flex items-center justify-center gap-3 shadow-xl shadow-[var(--color-cta)]/30 animate-cta-pulse cursor-pointer">

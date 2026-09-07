@@ -69,7 +69,7 @@ export const ProductMockup: React.FC = () => {
           <div className="grid md:grid-cols-2 gap-y-4 gap-x-8 max-w-3xl mx-auto">
             {checklist.map((item, idx) => (
               <div key={idx} className="flex items-center gap-3">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#4B9C49] flex items-center justify-center">
+                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#15803D] flex items-center justify-center">
                   <Check className="w-4 h-4 text-white stroke-[3]" />
                 </div>
                 <span className="text-slate-600 font-medium text-[15px]">{item}</span>

@@ -18,7 +18,7 @@ export const BenefitsSection: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-4 md:gap-6">
           {benefits.map((benefit, idx) => (
             <div key={idx} className="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
-              <CheckCircle2 className="w-8 h-8 text-[#4B9C49] flex-shrink-0" />
+              <CheckCircle2 className="w-8 h-8 text-[#15803D] flex-shrink-0" />
               <span className="text-slate-700 font-bold text-lg">{benefit}</span>
             </div>
           ))}
